@@ -32,8 +32,8 @@ Link: https://github-blog-dev.vercel.app
 
 
 ## :handshake: Contribuidores
-<a href="https://github.com/Derecky/github_blog/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Derecky/github_blog" />
+<a href="https://github.com/Derecky/study_coffee/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Derecky/study_coffee" />
 </a>
 
 ## :atom: Tecnologias
