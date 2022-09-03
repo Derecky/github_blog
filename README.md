@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# :octocat: Github Blog
 
-## Getting Started
+## :open_file_folder: Documentação
 
-First, run the development server:
+Toda documentação referente ao projeto estará concentrada na aba ``` wiki``` desde projeto
+
+## :package: Instalando dependências
+
+```bash
+npm install
+```
+
+## :rocket: Rodando o projeto localmente
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## :computer: Ambientes
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### [produção](https://github-blog-prod.vercel.app/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+O ambiente de produção é o produto final, que vai ser entregue ao usuário. Aqui fazemos só uma simulação, visto que o projeto é com finalidade de estudo.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Link: https://github-blog-prod.vercel.app
 
-## Learn More
+### [Desenvolvimento](https://github-blog-dev.vercel.app/)
 
-To learn more about Next.js, take a look at the following resources:
+O ambiente de desenvolvimento é feito para os devs validarem suas implementações antes de serem integradas ao ambiente de produção.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Link: https://github-blog-dev.vercel.app
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## :handshake: Contribuidores
+<a href="https://github.com/Derecky/github_blog/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Derecky/github_blog" />
+</a>
