@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Development environment!!
+          Development environment
         </h1>
       </main>
     </div>
