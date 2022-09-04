@@ -16,6 +16,8 @@ npm install
 npm run dev
 ```
 
+O servidor local está rodando em ```http:://localhost:3000```
+
 ## :computer: Ambientes
 
 ### [produção](https://github-blog-prod.vercel.app/)
