@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# :octocat: Github Blog
 
-## Getting Started
+## :open_file_folder: Documentação
 
-First, run the development server:
+Toda documentação referente ao projeto estará concentrada na aba ``` wiki``` desde projeto
+
+## :package: Instalando dependências
+
+```bash
+npm install
+```
+
+## :rocket: Rodando o projeto localmente
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O servidor local está rodando em ```http:://localhost:3000```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## :computer: Ambientes
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### [Produção](https://github-blog-prod.vercel.app/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+O ambiente de produção é o produto final, que vai ser entregue ao usuário. Aqui fazemos só uma simulação, visto que o projeto é com finalidade de estudo.
 
-## Learn More
+Link: https://github-blog-prod.vercel.app
 
-To learn more about Next.js, take a look at the following resources:
+### [Desenvolvimento](https://github-blog-dev.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O ambiente de desenvolvimento é feito para os devs validarem suas implementações antes de serem integradas ao ambiente de produção.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Link: https://github-blog-dev.vercel.app
 
-## Deploy on Vercel
+## 🖌️ [Protótipo](https://www.figma.com/file/F7zUgMngANpsAtvX3BAYJC/Coffee-Delivery-(Copy)?node-id=2%3A1550)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+figma: https://www.figma.com/file/F7zUgMngANpsAtvX3BAYJC/Coffee-Delivery-(Copy)?node-id=2%3A1550
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## :handshake: Contribuidores
+<a href="https://github.com/Derecky/study_coffee/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Derecky/study_coffee" />
+</a>
+
+## :atom: Tecnologias
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
