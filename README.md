@@ -20,7 +20,7 @@ O servidor local está rodando em ```http:://localhost:3000```
 
 ## :computer: Ambientes
 
-### [produção](https://github-blog-prod.vercel.app/)
+### [Produção](https://github-blog-prod.vercel.app/)
 
 O ambiente de produção é o produto final, que vai ser entregue ao usuário. Aqui fazemos só uma simulação, visto que o projeto é com finalidade de estudo.
 
