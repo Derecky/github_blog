@@ -30,7 +30,7 @@ O ambiente de desenvolvimento é feito para os devs validarem suas implementaç�
 
 Link: https://github-blog-dev.vercel.app
 
-## [Protótipo](https://www.figma.com/file/F7zUgMngANpsAtvX3BAYJC/Coffee-Delivery-(Copy)?node-id=2%3A1550)
+## 🖌️ [Protótipo](https://www.figma.com/file/F7zUgMngANpsAtvX3BAYJC/Coffee-Delivery-(Copy)?node-id=2%3A1550)
 
 figma: https://www.figma.com/file/F7zUgMngANpsAtvX3BAYJC/Coffee-Delivery-(Copy)?node-id=2%3A1550
 
