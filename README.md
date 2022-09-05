@@ -38,8 +38,8 @@ figma: https://www.figma.com/file/F7zUgMngANpsAtvX3BAYJC/Coffee-Delivery-(Copy)?
 
 
 ## :handshake: Contribuidores
-<a href="https://github.com/Derecky/study_coffee/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Derecky/study_coffee" />
+<a href="https://github.com/Derecky/github_blog/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Derecky/github_blog" />
 </a>
 
 ## :atom: Tecnologias
