@@ -12,20 +12,23 @@ export const MOCK_CART =[
         description: 'O tradicional café feito com água quente e grãos moídos',
         price: 9.90,
         quantity: 2,
-        img: ''
+        img: '',
+        id: 0,
     },
     {
         name: 'Expresso Americano',
         description: 'Expresso diluído, menos intenso que o tradicional',
         price: 9.90,
         quantity: 1,
-        img: ''
+        img: '',
+        id: 1,
     },
     {
         name: 'Árabe',
         description: 'Bebida preparada com grãos de café árabe e especiarias',
         price: 9.90,
         quantity: 3,
-        img: ''
+        img: '',
+        id: 2,
     }
 ]

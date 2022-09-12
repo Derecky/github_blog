@@ -30,7 +30,7 @@ export function Header () {
                         </option>
                         {MOCK_CITIES.map((city) => (
                             city_index != city.id 
-                            ? <option value={ city.id }>{ formatCity(city) }</option> 
+                            ? <option key={ city.id }  value={ city.id }>{ formatCity(city) }</option> 
                             : null
                         ))}
                     </select>
@@ -41,7 +41,8 @@ export function Header () {
                         <div id="div_qtd_carrinho">{ qtd_carrinho }</div>
                             <div id='div_carrinho'>
                                 {MOCK_CART.map((product) => (
-                                    <Product 
+                                    <Product
+                                        key = { product.id }  
                                         name = { product.name } 
                                         description = { product.description } 
                                         price = { product.price }

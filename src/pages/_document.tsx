@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { Header } from '../components/Header'
 
 /*
 	- O component Main serve pra dizer onde o app será mostrado
