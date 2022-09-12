@@ -41,8 +41,9 @@ export function Header () {
                         <div id="div_qtd_carrinho">{ qtd_carrinho }</div>
                             <div id='div_carrinho'>
                                 {MOCK_CART.map((product) => (
-                                    <Product
+                                    <Product 
                                         key = { product.id }  
+                                        id = { product.id }  
                                         name = { product.name } 
                                         description = { product.description } 
                                         price = { product.price }

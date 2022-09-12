@@ -30,7 +30,7 @@
 
 #div_header #div_header_direita{
     display: flex; 
-    justify-content: end; 
+    justify-content: flex-end; 
     min-width:400px;
 }
 #div_header #div_header_direita #div_local,#div_header #div_header_direita #button_carrinho{
