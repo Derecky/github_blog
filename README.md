@@ -18,6 +18,25 @@ npm run dev
 
 O servidor local está rodando em ```http:://localhost:3000```
 
+## :open_file_folder: Estrutura de pastas
+
+```
+app
+├── public
+├── src
+│   ├── @types
+│   │   └── *
+│   ├── components
+│   │   ├── *
+│   │   └── index.ts 
+│   ├── pages
+│   │   └── *
+│   ├── models
+│   │   └── *
+│   └── *
+└── index.js
+```
+
 ## :computer: Ambientes
 
 ### [Produção](https://github-blog-prod.vercel.app/)
