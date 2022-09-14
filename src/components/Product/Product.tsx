@@ -1,5 +1,11 @@
 import { Product } from "../../models/Product"
 
-export function Product ({ name, description, price, quantity, img, id }: Product, key:number) {
-    return <div key={ id }>{ name }</div>
+interface ProductProps {
+    product: Product
 }
+
+export function Product (product: ProductProps, key:number) {
+    const { name, description, price, quantity, img, id } = product.product;
+    return <div>{ name }</div>
+}
+

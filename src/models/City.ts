@@ -1,4 +1,4 @@
-export interface City {
+export type City = {
     id: number,
     name: string,
     province: 'AL' | 'SP' | 'SC',

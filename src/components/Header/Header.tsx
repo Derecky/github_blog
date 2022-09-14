@@ -3,6 +3,8 @@ import {MapPin,ShoppingCart} from "phosphor-react";
 import { City } from "../../models/City";
 import { Product } from "../Product";
 import { MOCK_CART, MOCK_CITIES } from "./Mock";
+import style from './Header.module.css';
+
 
 export function Header () {
     const city_index = 2;
@@ -16,13 +18,13 @@ export function Header () {
     const city_UF = formatCity(MOCK_CITIES[city_index]);
     
     return (
-        <div id='div_header'>
+        <div className={ style.div_header }>
             <Link href={ url }>
-                <a id="logo"></a>
+                <a className={ style.logo }></a>
             </Link>
 
-            <div id='div_header_direita'>
-                <div id='div_local'>
+            <div className={ style.div_header_direita }>
+                <div className={ style.div_local }>
                     <MapPin size={19.25} weight="fill" /> 
                     <select defaultValue={ city_index }>
                         <option value={ city_index }>
@@ -36,19 +38,15 @@ export function Header () {
                     </select>
                 </div>
                 <Link href={ url_cart }>
-                    <a id='button_carrinho'>
+                    <a className={ style.button_carrinho }>
                         <ShoppingCart size={ 19.25 } weight="fill" />
-                        <div id="div_qtd_carrinho">{ qtd_carrinho }</div>
-                            <div id='div_carrinho'>
+                        <div className={ style.div_qtd_carrinho }>{ qtd_carrinho }</div>
+                            <div className={ style.div_carrinho }>
                                 {MOCK_CART.map((product) => (
                                     <Product 
                                         key = { product.id }  
-                                        id = { product.id }  
-                                        name = { product.name } 
-                                        description = { product.description } 
-                                        price = { product.price }
-                                        quantity = { product.quantity }
-                                        img = { product.img } />
+                                        product = { product } 
+                                    />
                                 ))}
                             </div>
                     </a>

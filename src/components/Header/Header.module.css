@@ -1,4 +1,4 @@
-#div_header *{
+.div_header *{
     margin:0px; 
     padding:0px; 
     border:0px none; 
@@ -8,8 +8,8 @@
     display:flex; 
     justify-content: space-between;
 }
-#div_header{
-    background:white; 
+.div_header{
+    background:white;
     padding:32px 6%;
     text-align:justify; 
     max-width:1140px; 
@@ -19,7 +19,7 @@
     min-width:800px; 
     width:100%;
 }
-#div_header #logo{
+.div_header .logo{
     background-image:url("/svg/logo.svg"); 
     background-repeat: no-repeat;
     height:40px; 
@@ -28,37 +28,37 @@
     margin-right: 10px;
 }
 
-#div_header #div_header_direita{
+.div_header.iv_header_direita{
     display: flex; 
     justify-content: flex-end; 
     min-width:400px;
 }
-#div_header #div_header_direita #div_local,#div_header #div_header_direita #button_carrinho{
+.div_header .div_header_direita .div_local,.div_header .div_header_direita .button_carrinho{
     height: 38px;
     border-radius:6px; 
     line-height:19.2px; 
     padding:10px 8px; 
     font-size:14px;
 }
-#div_header #div_header_direita #div_local{
+.div_header .div_header_direita .div_local{
     background:#EBE5F9;
     color:#4B2995; 
     font-family: 'Roboto', sans-serif; 
     margin-right:12px;
 }
-#div_header #div_header_direita #div_local select{
+.div_header .div_header_direita .div_local select{
     background:#EBE5F9;
     color:#4B2995; 
     font-family: 'Roboto', sans-serif; 
     display:inline-block; border-radius: 6px;}
 
 
-#div_header #div_header_direita #button_carrinho{
+.div_header .div_header_direita .button_carrinho{
     background:#F1E9C9; 
     color:#C47F17; 
     padding:9.37px 10.75px;
 }
-#div_header #div_header_direita #button_carrinho #div_qtd_carrinho{
+.div_header .div_header_direita .button_carrinho .div_qtd_carrinho{
     width:20px;
     height:20px; 
     background:#C47F17; 
@@ -73,7 +73,7 @@
     right:-8px;
     display:inline-block; 
 }
-#div_header #div_header_direita #button_carrinho #div_carrinho{
+.div_header .div_header_direita .button_carrinho .div_carrinho{
     display:none; 
     position:absolute; 
     left:-150px; 
@@ -86,15 +86,15 @@
     color:#C47F17; 
     opacity:0.8;
 }
-#div_header #div_header_direita #button_carrinho #div_carrinho div{
+.div_header .div_header_direita .button_carrinho .div_carrinho div{
     display:flex; 
     padding:14px; 
-    border-bottom:1px solid #E6E5E5; 
+    border-top:1px solid #E6E5E5; 
     position:relative;
     width:260px;
     justify-content: space-between; 
     font-weight: bold;
 }
-#div_header #div_header_direita #button_carrinho:hover #div_carrinho{
+.div_header .div_header_direita .button_carrinho:hover .div_carrinho{
     display:block
 }
