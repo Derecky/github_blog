@@ -16,6 +16,7 @@ export const IconButtonContainer = styled.div<IconButtonContainerProps> `
     padding:8px;
     justify-content:center;
     align-items:center;
+    transition: 1s; 
 
     &:hover {
         background-color: ${(props) => props.backgroundColorLight};
