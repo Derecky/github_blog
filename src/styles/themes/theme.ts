@@ -1,4 +1,22 @@
-export const defaultTheme = {
+export interface defaultThemeInterface {
+    yellowLight: string,
+    yellow: string,
+    yellowDark: string,
+    purpleLight: string,
+    purple: string,
+    purpleDark: string,
+    baseTitle: string,
+    baseSubtTitle: string,
+    baseText: string,
+    baseLabel:string,
+    baseHover: string,
+    baseButton: string,
+    baseInput: string,
+    baseCard: string,
+    background: string,
+    white: string, 
+}
+export const defaultTheme: defaultThemeInterface = {
     yellowLight: '#F1E9C9',
     yellow: '#DBAC2C',
     yellowDark: '#C47F17',
