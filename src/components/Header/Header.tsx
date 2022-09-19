@@ -2,15 +2,21 @@ import Link from "next/link";
 import {MapPin,ShoppingCart} from "phosphor-react";
 import { City } from "../../models/City";
 import { Product } from "../Product";
-import { MOCK_CART, MOCK_CITIES } from "./Mock";
+import { MOCK_CITIES } from "./Mock";
 import style from './Header.module.css';
+import { CartProduct } from "../../models/Cart";
 
+interface HeaderProps {
+    currentCart: CartProduct[];
+}
 
-export function Header () {
+export function Header ({currentCart}: HeaderProps) {
     const city_index = 2;
-    const qtd_carrinho = (MOCK_CART.reduce((partialSum,currentItem) => partialSum + currentItem.quantity, 0));
+    const qtd_carrinho = (currentCart.reduce((partialSum,currentItem) => partialSum + currentItem.quantity, 0));
     const url = "/"; 
     const url_cart = "/"; 
+    //cart={ currentCart } 
+
 
     function formatCity(city: City) {
         return `${ city.name.slice(0,20) }, ${ city.province }`;
@@ -42,12 +48,17 @@ export function Header () {
                         <ShoppingCart size={ 19.25 } weight="fill" />
                         <div className={ style.div_qtd_carrinho }>{ qtd_carrinho }</div>
                             <div className={ style.div_carrinho }>
-                                {MOCK_CART.map((product) => (
+                                {currentCart.map((cart) => (
+                                    cart.quantity!=0?
                                     <Product 
-                                        key = { product.id }  
-                                        product = { product } 
-                                    />
-                                ))}
+                                        key = { cart.product.id }  
+                                        product = { cart.product } 
+                                        version = 'minimal'
+                                        quantity = { cart.quantity }
+                                        AddToCart={() => {return false;}}
+                                    />:
+                                    <></>)
+                                )}
                             </div>
                     </a>
                 </Link> 
