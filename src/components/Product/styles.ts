@@ -1,29 +1,10 @@
 import styled from "styled-components"
 
-
-
-interface ProductCardContainerProps {
-    backgroundCard: string;
-    backgroundLabel: string;
-    backgroundCountButton: string;
-    colorCard: string;
-    colorCardTitle: string;
-    colorPrice: string;
-    colorLabel: string;
-    colorCountButton: string;    
-}
-
-interface MinusPlusButtonProps {
-    colorIcons: string;
-    colorQuantity: string;
-    background: string;
-}
-
-export const ProductCardContainer = styled.div<ProductCardContainerProps>`
+export const ProductCardContainer = styled.div`
     display:flex;
     /*flex-direction:column; */
     position:relative;
-    background-color:${(props) => props.backgroundCard};
+    background-color:${(props)=>props.theme.baseCard};
     width:256px;
     margin:16px;
     margin-bottom:70px;
@@ -49,7 +30,7 @@ export const ProductCardContainer = styled.div<ProductCardContainerProps>`
 
 
     h2 {font-weight:bold;
-        color:${(props) => props.colorCardTitle};
+        color:${(props) => props.theme.baseSubtTitle};
         font-size:20px;
         margin-top:20px; 
         width:100%;
@@ -69,13 +50,13 @@ export const ProductCardContainer = styled.div<ProductCardContainerProps>`
         margin:0px 2px;
         border-radius:100px;
         font-size: 10px;
-        background-color:${(props) => props.backgroundLabel};
-        color:${(props) => props.colorLabel};
+        background-color:${(props) => props.theme.yellowLight};
+        color:${(props) => props.theme.yellowDark};
         font-weight:bold; 
     }
 
     .description{
-        color: ${(props) => props.colorCard};
+        color: ${(props) => props.theme.baseLabel};
         font-size:14px;
         font-weight:normal;
         display:block;
@@ -96,7 +77,7 @@ export const ProductCardContainer = styled.div<ProductCardContainerProps>`
             font-size:14px;
             font-family: 'Roboto', sans-serif;
             font-weight:normal;
-            color:${(props) => props.colorPrice};
+            color:${(props) => props.theme.baseText};
 
             span{
                 font-size:24px;
@@ -117,7 +98,7 @@ export const AddCartButtonContainer = styled.div`
 `
 
 
-export const MinusPlusButtonContainer = styled.div<MinusPlusButtonProps>`
+export const MinusPlusButtonContainer = styled.div`
 
     display:flex;
     text-align:center;
@@ -128,16 +109,16 @@ export const MinusPlusButtonContainer = styled.div<MinusPlusButtonProps>`
     margin-right:8px;
     padding:6px;
     border-radius:6px;
-    background-color:${(props) => props.background};
+    background-color:${(props) => props.theme.baseButton};
 
     div {
         display:flex;
-        color:${(props) => props.colorQuantity};
+        color:${(props) => props.theme.baseTitle};
         font-weight:normal;
     }
     svg {
         margin:8px;
-        color:${(props) => props.colorIcons};
+        color:${(props) => props.theme.purple};
         cursor:pointer;
     }
 `

@@ -18,11 +18,7 @@ export function AddCartButton (product: Product, AddToCart : (productId: number,
 
     return (
         <AddCartButtonContainer>
-            <MinusPlusButtonContainer
-                colorIcons = { defaultTheme.purple }
-                background = { defaultTheme.baseButton }
-                colorQuantity = { defaultTheme.baseTitle }
-            >
+            <MinusPlusButtonContainer>
                 <Minus size={11} weight="fill" onClick={ handleSub } />
                 <div>
                     { count }

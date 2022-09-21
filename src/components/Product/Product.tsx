@@ -15,15 +15,7 @@ export function Product ({product, quantity=0, version, AddToCart}: ProductProps
     const { name, description, price, img, id } = product;
     
     if (version=="big") {
-        return (<ProductCardContainer
-                    backgroundCard={ defaultTheme.baseCard }
-                    backgroundLabel={ defaultTheme.yellowLight }
-                    backgroundCountButton={ defaultTheme.baseButton }
-                    colorCardTitle={ defaultTheme.baseSubtTitle }
-                    colorCard={ defaultTheme.baseLabel }
-                    colorPrice={ defaultTheme.baseText }
-                    colorLabel={ defaultTheme.yellowDark }
-                    colorCountButton={ defaultTheme.purple }> 
+        return (<ProductCardContainer> 
                         <img src={ img }/>
                         <div className="tags">
                             {product.tags.map((tag) => (<span key={ id+tag }>{ tag }</span>))}
