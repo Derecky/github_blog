@@ -28,11 +28,13 @@ const Home: NextPage = () => {
 
   //     
   return (
-    <div className={styles.container}>
-      <Header currentCart = { currentCart } />
-      <main className={styles.main}>
-            <MainPage AddToCart={ AddToCart } />
-      </main>
+    <div className={styles.body}>
+      <div className={styles.container}>
+        <Header currentCart = { currentCart } />
+        <main className={styles.main}>
+              <MainPage AddToCart={ AddToCart } />
+        </main>
+      </div>
     </div>
   )
 }

@@ -2,12 +2,10 @@ import styled from "styled-components"
 
 export const ProductCardContainer = styled.div`
     display:flex;
-    /*flex-direction:column; */
     position:relative;
     background-color:${(props)=>props.theme.baseCard};
     width:256px;
-    margin:16px;
-    margin-bottom:70px;
+    margin-bottom:50px;
     border-radius:6px 36px;
     justify-content: center; 
     flex-wrap:wrap;

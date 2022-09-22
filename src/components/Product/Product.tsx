@@ -10,7 +10,6 @@ interface ProductProps {
     AddToCart : (productId: number, addedQuantity: number)=>void;
 }
 
-
 export function Product ({product, quantity=0, version, AddToCart}: ProductProps) {
     const { name, description, price, img, id } = product;
     
