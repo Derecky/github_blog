@@ -11,7 +11,6 @@ interface IconButtonContainerProps {
 export const IconButtonContainer = styled.div<IconButtonContainerProps> `
     background-color: ${(props) => props.background};
     color: ${(props) => props.color};
-    padding:10px;
     width:max-content;
     display:flex;
     border-radius:6px;

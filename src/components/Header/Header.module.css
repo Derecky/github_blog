@@ -87,6 +87,7 @@
     text-align: center; 
     color:#C47F17; 
     opacity:0.8;
+    z-index: 9;
 }
 .div_header .div_header_direita .button_carrinho .div_carrinho div{
     display:flex; 
@@ -98,5 +99,5 @@
     font-weight: bold;
 }
 .div_header .div_header_direita .button_carrinho:hover .div_carrinho{
-    display:block
+    display:block;
 }

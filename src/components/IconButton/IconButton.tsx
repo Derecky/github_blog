@@ -67,8 +67,9 @@ export function IconButton ({icon, size=20, background = "purpleDark", backgroun
             background={ backgroundC }
             backgroundHover={ backgroundHoverC } 
             colorIconHover={ colorIconHoverC }
-            onClick={ clickFunction }>{ IconTypes[icon as keyof IconTypesInterface] } 
-            { text?(<span>{ text }</span>):"" }            
+            onClick={ clickFunction }>
+                { IconTypes[icon as keyof IconTypesInterface] } 
+                { text?(<span>{ text }</span>):"" }            
         </IconButtonContainer>
         
     )
