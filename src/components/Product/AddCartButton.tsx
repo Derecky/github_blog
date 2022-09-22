@@ -1,7 +1,6 @@
 import {Plus,Minus} from "phosphor-react";
 import {useState } from 'react';
 import { AddCartButtonContainer, MinusPlusButtonContainer } from "./styles";
-import { defaultTheme } from "../../styles/themes/theme";
 import { IconButton } from "../IconButton";
 import { Product } from "../../models/Product";
 

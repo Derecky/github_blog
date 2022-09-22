@@ -1,6 +1,5 @@
-import { ShoppingCart, Package,Timer,Coffee } from 'phosphor-react';
+import { iconTypes, IconTypesInterface } from "../../models/Icon";
 import { IconFeaturesContainer } from './styles';
-import { IconTypes } from "../../models/icon";
 
 
 
@@ -11,18 +10,10 @@ interface IconFeaturesProps {
 }
 
 export function IconFeatures ({icon,color,description}: IconFeaturesProps) {
-    
-    const iconTypesFeatures: IconTypes = {
-        ShoppingCart     : <ShoppingCart />,
-        Timer            : <Timer />,
-        Package          : <Package />,
-        Coffee           : <Coffee />
-    }
-
     return(
         <IconFeaturesContainer color={ color }>
             <span className='IconSpan'>
-                { iconTypesFeatures[icon as keyof IconTypes] } 
+                { iconTypes[icon as keyof IconTypesInterface] } 
             </span>
             { description }
         </IconFeaturesContainer>

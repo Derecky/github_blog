@@ -1,6 +1,5 @@
 import { Product } from "../../models/Product"
 import { ProductCardContainer,ProductMinimalContainer } from "./styles";
-import { defaultTheme } from "../../styles/themes/theme";
 import { AddCartButton } from "./AddCartButton";
 
 interface ProductProps {

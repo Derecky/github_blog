@@ -1,6 +1,6 @@
 import { IconContext} from "phosphor-react";
 import { defaultTheme, defaultThemeInterface } from "../../styles/themes/theme";
-import { iconTypes, IconTypesInterface } from "../../models/icon";
+import { iconTypes, IconTypesInterface } from "../../models/Icon";
 import { IconButtonContainer } from './styles'
 
 interface IconButtonProps {
