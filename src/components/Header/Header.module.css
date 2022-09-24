@@ -9,15 +9,14 @@
     justify-content: space-between;
 }
 .div_header{
-    background:white;
-    padding:32px 6%;
+    padding:32px 0px;
     text-align:justify; 
-    max-width:1140px; 
+    width:100%;
+    max-width:1120px; 
     position:relative;
     display: flex; 
     justify-content: space-between;  
     min-width:800px; 
-    width:100%;
 }
 .div_header .logo{
     background-image:url("/svg/logo.svg"); 
@@ -52,8 +51,8 @@
     color:#4B2995; 
     font-family: 'Roboto', sans-serif; 
     display:inline-block; 
-    border-radius: 6px;}
-
+    border-radius: 6px;
+}
 
 .div_header .div_header_direita .button_carrinho{
     background:#F1E9C9; 

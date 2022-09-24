@@ -1,6 +1,5 @@
 import { Product } from "../../models/Product"
 import { ProductCardContainer,ProductMinimalContainer } from "./styles";
-import { defaultTheme } from "../../styles/themes/theme";
 import { AddCartButton } from "./AddCartButton";
 
 interface ProductProps {
@@ -9,7 +8,6 @@ interface ProductProps {
     version: 'minimal' | 'big';
     AddToCart : (productId: number, addedQuantity: number)=>void;
 }
-
 
 export function Product ({product, quantity=0, version, AddToCart}: ProductProps) {
     const { name, description, price, img, id } = product;
