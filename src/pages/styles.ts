@@ -9,16 +9,26 @@ export const BodyContainer = styled.div`
         padding: 0;
         margin:0 auto;
         max-width: 1120px;
-    }    
-
-    .cartDiv{
-        width:448px;
-        border-radius:6px;
-        justify-content:center;
-        align-items:center;
         display:flex;
-        div {
+        flex-direction: column;
+    }    
+    
+    .bodyCheckout{
+        display:flex; 
+        flex-direction:row;
+        .cartLeft{
+            width:300px; 
             display:flex;
+        }
+        .cartDiv{
+            width:448px;
+            border-radius:6px;
+            justify-content:center;
+            align-items:center;
+            display:flex;
+            div {
+                display:flex;
+            }
         }
     }
 `

@@ -34,13 +34,15 @@ const Home: NextPage = () => {
       <main>
         <div className="Container">
           <Header currentCart = { currentCart } AddToCart = { AddToCart } />
-              (juntar form de endereço com carrinho)
-              <div className="cartDiv">
-                <Cart 
-                    AddToCart={ AddToCart } 
-                    currentCart={ currentCart }
-                />
-              </div>    
+          <div className='bodyCheckout'>
+            <div className='cartLeft'>[ Em construção ]</div>              
+            <div className="cartDiv">
+              <Cart 
+                  AddToCart={ AddToCart } 
+                  currentCart={ currentCart }
+              />
+            </div>
+          </div>    
         </div>
       </main>
     </BodyContainer>
