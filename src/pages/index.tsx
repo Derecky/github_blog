@@ -8,7 +8,7 @@ import { BodyContainer } from './styles'
 
 const Home: NextPage = () => {
   const [currentCart, setCurrentCart] = useState(MOCK_CART as CartProduct[]);
-  function AddToCart (productId: number, addedQuantity: number, newQuantity: number = -1){
+  function AddToCart (productId: number, addedQuantity: number, newQuantity = -1){
     let temp:boolean;    
     temp=true; 
     

@@ -18,7 +18,7 @@ export const CartContainer = styled.div`
                 font-family: 'Roboto', sans-serif;
                 width:448px;
                 flex-wrap: wrap;
-                .CartTotalRow{
+                div{
                         width:100%;
                         flex-direction:row;
                         align-content: space-between;

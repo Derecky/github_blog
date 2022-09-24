@@ -29,15 +29,15 @@ export function Cart ({currentCart, AddToCart}: CartProps) {
                     />:"")
                 )}
                 <div className="CartTotal">
-                    <div className="CartTotalRow">
+                    <div>
                         <span>Total de itens</span>
                         R${ totalPrice.toFixed(2).toString().replace(".",",") }
                     </div>
-                    <div className="CartTotalRow">
+                    <div>
                         <span>Entrega</span>
                         R${ deliveryPrice.toFixed(2).toString().replace(".",",") }
                     </div>
-                    <div className="CartTotalRow Total">
+                    <div className="Total">
                         <span>Total</span>
                         R$ { (totalPrice+deliveryPrice).toFixed(2).toString().replace(".",",") }
                     </div>
