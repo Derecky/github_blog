@@ -21,7 +21,7 @@ export function Cart ({currentCart, AddToCart}: CartProps) {
                 {currentCart.map((cart) => (
                     cart.quantity!=0?
                     <Product 
-                        key = { cart.product.id }  
+                        key = { cart.product.id + 'cart' }  
                         product = { cart.product } 
                         version = 'minimal'
                         quantity = { cart.quantity }
