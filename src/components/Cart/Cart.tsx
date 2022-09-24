@@ -7,7 +7,7 @@ import { CartContainer } from "./styles";
 
 interface CartProps {
     currentCart: CartProduct[];
-    AddToCart : (productId: number, addedQuantity: number, newQuantity?:number)=>void;
+    AddToCart : (productId: number, addedQuantity: number)=>void;
 }
 
 export function Cart ({currentCart, AddToCart}: CartProps) {
