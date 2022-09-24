@@ -47,7 +47,7 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                         ))}
                     </select>
                 </div>
-                    <a 
+                    <div 
                         className='button_carrinho' 
                         onClick={ () => {return false;} }
                     >
@@ -57,7 +57,7 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                             AddToCart={ AddToCart } 
                             currentCart={ currentCart }
                         />
-                    </a>
+                    </div>
             </div>
         </DivHeaderContainer>
     )

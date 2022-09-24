@@ -44,10 +44,9 @@ export const CartContainer = styled.div`
                         background-color:${(props) => props.theme.yellow}; 
                         color:white;
                         border-radius:6px;
-                        text-align: center;
-                        vertical-align: center;
                         padding:12px;
                         font-weight: 700;
+                        text-align: center;
                 }
         }
 `
