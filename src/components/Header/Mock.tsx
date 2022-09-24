@@ -126,17 +126,11 @@ export const MOCK_ALLPRODUCTS: Product[] =[
 export const MOCK_CART: CartProduct[] =[
     {
         product: MOCK_ALLPRODUCTS[2],
-        quantity: 5,
+        quantity: 2,
     },
     {
         product: MOCK_ALLPRODUCTS[1],
-        quantity: 6,
-    },
-    {
-        product: MOCK_ALLPRODUCTS[4],
-        quantity: 3,
-    },
-
+        quantity: 1,
+    }
 ]
 
-export const deliveryPrice: number = 3.50;
