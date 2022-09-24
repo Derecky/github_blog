@@ -26,8 +26,7 @@ export function Cart ({currentCart, AddToCart}: CartProps) {
                         version = 'minimal'
                         quantity = { cart.quantity }
                         AddToCart={ AddToCart }
-                    />:
-                    <></>)
+                    />:"")
                 )}
                 <div className="CartTotal">
                     <div className="CartTotalRow">
