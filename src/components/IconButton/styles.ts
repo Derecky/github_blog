@@ -18,6 +18,7 @@ export const IconButtonContainer = styled.div<IconButtonContainerProps> `
     justify-content:center;
     align-items:center;
     transition: 1s; 
+    font-size: 12px;
 
     &:hover {
         cursor:pointer;
@@ -26,6 +27,9 @@ export const IconButtonContainer = styled.div<IconButtonContainerProps> `
         svg *{stroke:${(props) => props.colorIconHover};}
     }
 
-    span {display:inline-block; margin:0px 7px; }
+    span {
+        display:inline-block; 
+        margin:0px 7px; 
+    }
 `
 

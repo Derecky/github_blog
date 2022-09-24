@@ -16,6 +16,7 @@ export const ProductCardContainer = styled.div`
         vertical-align:middle;
         padding:0px;
         margin:0px;
+        transition: 1s; 
     }
 
     img {
@@ -119,7 +120,72 @@ export const MinusPlusButtonContainer = styled.div`
         color:${(props) => props.theme.purple};
         cursor:pointer;
     }
+    svg:hover{
+        color:${(props) => props.theme.purpleDark};
+    }
 `
 export const ProductMinimalContainer = styled.div `
-    display:flex;    
+    width:100%;
+    background:${(props) => props.theme.baseCard};
+    padding:14px;
+    border-bottom: 1px solid ${(props) => props.theme.baseButton};
+    display:flex;
+    align-content:space-between;
+    justify-content: space-between;
+    
+    .MinimalProductImg{
+        width:64px;
+        height:64px;
+    }
+    .MinimalMain{
+        width:171px;
+        flex-direction: column;
+        h2{
+            color:${(props) => props.theme.baseSubtTitle};
+            font-size:16px;
+            margin:0px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 130%;
+        }
+        .MinimalButtons{
+            flex-direction: row;
+            height: 32px;
+            justify-content:center;
+            align-items:stretch;
+            div {
+                align-items:center;
+                padding:8px;
+            }
+        }
+    }
+    .MinimalPrice{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        line-height: 130%;
+        font-size:16px;
+        color:${(props) => props.theme.baseSubtTitle};
+    }
+    .MinimalMinusPlusButton{
+        display:flex;
+        text-align:center;
+        font-size: 16px;
+        transition: 1s; 
+        margin-right:8px;
+        border-radius:6px;
+        padding:8px;
+        background-color:${(props) => props.theme.baseButton};
+        div{
+            display:flex;
+            color:${(props) => props.theme.baseTitle};
+            font-weight:normal;           
+        }        
+        svg{
+            color:${(props) => props.theme.purple};
+            cursor:pointer;
+        }
+        svg:hover{
+            color:${(props) => props.theme.purpleDark};
+        }
+    }
 `
