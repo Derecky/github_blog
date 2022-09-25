@@ -8,11 +8,13 @@ import { CartContainer } from "./styles";
 interface CartProps {
     currentCart: CartProduct[];
     AddToCart : (productId: number, addedQuantity: number, newQuantity?:number)=>void;
+    isInHeader: boolean;
 }
 
-export function Cart ({currentCart, AddToCart}: CartProps) {
+export function Cart ({currentCart, AddToCart, isInHeader}: CartProps) {
     const totalPrice = (currentCart.reduce((partialPrice,currentItem) => partialPrice + (currentItem.quantity*currentItem.product.price), 0));
     const url_success="./";
+    const url_checkout="/checkout";
     const router = useRouter();
 
     return (
@@ -41,7 +43,11 @@ export function Cart ({currentCart, AddToCart}: CartProps) {
                         <span>Total</span>
                         R$ { (totalPrice+deliveryPrice).toFixed(2).toString().replace(".",",") }
                     </div>
-                    <a onClick={ () => {router.push(url_success);} } className="CartTotalButton">CONFIRMAR PEDIDO</a>
+                    { (isInHeader)?
+                        ""
+                        :<a onClick={ () => {router.push(url_success);} } className="CartTotalButton">CONFIRMAR PEDIDO</a>
+                    }
+                    
                 </div>    
             </div> 
         </CartContainer>

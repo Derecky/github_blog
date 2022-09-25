@@ -53,11 +53,16 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                     >
                         <ShoppingCart size={ 19.25 } weight="fill" onClick={ () => {router.push(url_cart);} } />
                         <div className='CartDivQtd'>{ qtd_carrinho }</div>
-                        <Cart 
-                            AddToCart={ AddToCart } 
-                            currentCart={ currentCart }
-                        />
+                        {router.asPath=="/"?
+                            <Cart 
+                                    AddToCart={ AddToCart } 
+                                    currentCart={ currentCart }
+                                    isInHeader={ true }
+                                />
+                        :""
+                        }
                     </div>
+                    
             </div>
         </DivHeaderContainer>
     )
