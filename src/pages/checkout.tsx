@@ -9,23 +9,24 @@ import { BodyContainer } from '../styles/pages/homeStyles'
 const Home: NextPage = () => {
   const [currentCart, setCurrentCart] = useState(MOCK_CART as CartProduct[]);
   function AddToCart (productId: number, addedQuantity: number, newQuantity = -1){
-    let temp:boolean;    
-    temp=true; 
+    let ProductIsNotInCart:boolean;    
+    ProductIsNotInCart=true; 
     
-    const newCart = currentCart.map(
+    const newQuantitiesCart = currentCart.map(
       (productCart)=>{
         if (productId==productCart.product.id){
           if (newQuantity<0) {productCart.quantity+=addedQuantity;}
           else {productCart.quantity=newQuantity;}
-          temp=false;
+          ProductIsNotInCart=false;
         }
         return productCart;
-      }).filter((product) => {return (product.quantity>0);});
+      });
+    const CartWithoutZeroedProducts =  newQuantitiesCart.filter((product) => {return (product.quantity>0)});
     
-    if (temp) {      
-      newCart.push({product: MOCK_ALLPRODUCTS[productId], quantity: addedQuantity});
+    if (ProductIsNotInCart) {      
+      CartWithoutZeroedProducts.push({product: MOCK_ALLPRODUCTS[productId], quantity: addedQuantity});
     }
-    setCurrentCart(newCart);
+    setCurrentCart(CartWithoutZeroedProducts);
   }
 
   //     
@@ -38,8 +39,9 @@ const Home: NextPage = () => {
             <div className='cartLeft'>[ Em construção ]</div>              
             <div className="cartDiv">
               <Cart 
-                  AddToCart={ AddToCart } 
-                  currentCart={ currentCart }
+                  AddToCart = { AddToCart } 
+                  currentCart = { currentCart }
+                  isInHeader = { false }
               />
             </div>
           </div>    
