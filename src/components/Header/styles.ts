@@ -9,7 +9,7 @@ export const DivHeaderContainer = styled.div`
     display: flex; 
     justify-content: space-between;  
     min-width:800px; 
-    
+        
     *{
         margin:0px; 
         padding:0px; 
@@ -87,7 +87,7 @@ export const DivHeaderContainer = styled.div`
                 right:-50px; 
                 top:16px; 
                 position:absolute; 
-                opacity:0.8;
+                opacity:0.9;
                 z-index: 9;
             }
 

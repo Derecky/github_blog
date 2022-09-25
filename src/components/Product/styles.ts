@@ -25,6 +25,11 @@ export const ProductCardContainer = styled.div`
         position:absolute; 
         top:-20px;
         left:68px;
+        border:1px solid red;
+        -webkit-user-select: none;
+        -moz-user-select: -moz-none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
 
@@ -41,6 +46,10 @@ export const ProductCardContainer = styled.div`
     .tags {
         display:flex; 
         margin-top: 112px;
+        -webkit-user-select: none;
+        -moz-user-select: -moz-none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .tags span{

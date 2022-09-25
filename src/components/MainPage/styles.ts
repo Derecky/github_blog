@@ -11,10 +11,12 @@ export const MainPageContainer = styled.div `
         display:block;
         font-size:32px;
         width:100%;
+        color:${(props)=>props.theme.baseSubtTitle};
     }
 
     .ProductGroup{
         width:100%;
+        margin-top:30px;
         display:grid;
         grid-template-columns: repeat(auto-fill, 256px);
         flex-flow: row wrap;
