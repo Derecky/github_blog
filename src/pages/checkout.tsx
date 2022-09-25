@@ -4,7 +4,7 @@ import { Cart } from '../components/Cart'
 import { Header } from '../components/Header'
 import { MOCK_ALLPRODUCTS, MOCK_CART} from '../components/Header/Mock'
 import { CartProduct } from '../models/Cart'
-import { BodyContainer } from './styles'
+import { BodyContainer } from '../styles/pages/homeStyles'
 
 const Home: NextPage = () => {
   const [currentCart, setCurrentCart] = useState(MOCK_CART as CartProduct[]);
