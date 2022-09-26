@@ -11,9 +11,6 @@ export const DivHeaderContainer = styled.div`
     min-width:800px; 
         
     *{
-        margin:0px; 
-        padding:0px; 
-        border:0px none; 
         transition: 1s; 
         position:relative;  
         vertical-align: middle; 
@@ -32,8 +29,9 @@ export const DivHeaderContainer = styled.div`
         display: flex; 
         justify-content: flex-end; 
         min-width:400px;
+        height: 38px;
+
         .div_local{
-            height: 3em;
             border-radius:6px;
             justify-content:center;
             align-items:center; 
@@ -48,20 +46,18 @@ export const DivHeaderContainer = styled.div`
                 background:#EBE5F9;
                 color:#4B2995; 
                 font-family: 'Roboto', sans-serif; 
-                display:inline-block; 
+                display:inline-block;
+                border:0px; 
                 border-radius: 6px;
             }
         }
         .button_carrinho{
-            height: 3em;
             border-radius:6px;
             justify-content:center;
             align-items:center;
-            font-size:14px;
             background:#F1E9C9; 
             color:#C47F17; 
-            padding:9.37px 10.75px;
-
+            padding:8px 10.75px;
             svg{
                 cursor:pointer;
             }
