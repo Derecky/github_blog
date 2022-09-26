@@ -5,7 +5,7 @@ import { MainPageContainer } from "./styles";
 
 
 interface MainPageProps {
-    AddToCart : (productId: number, addedQuantity: number)=>void;
+    AddToCart : (productId: number, addedQuantity: number, newQuantity?:number)=>void;
 }
 
 export function MainPage ({AddToCart}: MainPageProps) {

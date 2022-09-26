@@ -21,10 +21,11 @@ export const IconFeaturesContainer = styled.div<IconFeaturesProps> `
 
 export const BannerContainer = styled.div `
     margin-top:94px;
-    height:544px;
+    height:fit-content;
     display:block;
     width:100%;
     position:relative;
+    margin-bottom:52px;
 
     .BannerBackground{
         background: url("/svg/banner_background.svg") no-repeat;
