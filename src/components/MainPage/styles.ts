@@ -7,9 +7,11 @@ export const MainPageContainer = styled.div `
     align-content:space-between;
 
     .ProductGroupTitle{
+        margin-top:70px;
         font-family:'Baloo 2', cursive;
         display:block;
         font-size:32px;
+        font-weight: 800;
         width:100%;
         color:${(props)=>props.theme.baseSubtTitle};
     }
