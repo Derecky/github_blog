@@ -1,12 +1,13 @@
 import Link from "next/link";
 import {MapPin,ShoppingCart} from "phosphor-react";
 import { City } from "../../models/City";
-import { Product } from "../Product";
 import { MOCK_CITIES } from "./Mock";
 import { DivHeaderContainer } from './styles';
 import { CartProduct } from "../../models/Cart";
 import { useRouter } from "next/router";
 import { Cart } from "../Cart";
+import { HoverCard } from "../HoverCard";
+import { HoverCardContent, HoverCardTrigger } from "../HoverCard/HoverCard";
 
 interface HeaderProps {
     currentCart: CartProduct[];
@@ -32,7 +33,6 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
             <Link href={ url }>
                 <a className='logo'></a>
             </Link>
-
             <div className='div_header_direita'>
                 <div className='div_local'>
                     <MapPin size={19.25} weight="fill" /> 
@@ -47,6 +47,18 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                         ))}
                     </select>
                 </div>
+
+<div className="teste">
+<HoverCard openDelay={0}>
+<HoverCardTrigger>
+    ASDASDASD
+</HoverCardTrigger>
+<HoverCardContent sideOffset={5} side="bottom">The content</HoverCardContent>
+</HoverCard>
+
+</div>
+
+
                     <div 
                         className='button_carrinho' 
                         onClick={ () => {return false;} }
@@ -62,7 +74,6 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                         :""
                         }
                     </div>
-                    
             </div>
         </DivHeaderContainer>
     )

@@ -9,7 +9,9 @@ export const DivHeaderContainer = styled.div`
     display: flex; 
     justify-content: space-between;  
     min-width:800px; 
-        
+    
+    .teste *{position:relative}
+
     *{
         transition: 1s; 
         position:relative;  
