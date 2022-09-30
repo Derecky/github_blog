@@ -6,7 +6,7 @@ import { DivHeaderContainer, HoverCardCart } from './styles';
 import { CartProduct } from "../../models/Cart";
 import { useRouter } from "next/router";
 import { Cart } from "../Cart";
-import { HoverCard, HoverCardContent, HoverCardTrigger} from "../HoverCard/HoverCard";
+import { HoverCard, HoverCardContent, HoverCardTrigger} from "../RadixHoverCard";
 
 interface HeaderProps {
     currentCart: CartProduct[];
