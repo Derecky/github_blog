@@ -147,7 +147,8 @@ export const ProductMinimalContainer = styled.div `
         height:64px;
     }
     .MinimalMain{
-        width:171px;
+        display:flex;
+        width:191px;
         flex-direction: column;
         h2{
             color:${(props) => props.theme.baseSubtTitle};
@@ -158,14 +159,18 @@ export const ProductMinimalContainer = styled.div `
             line-height: 130%;
         }
         .MinimalButtons{
-            flex-direction: row;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
             height: 32px;
-            justify-content:center;
-            align-items:stretch;
+            padding:8px;
+            
             div {
                 align-items:center;
-                padding:8px;
+                padding:4px 8px;
+                height:100%;
+                height: 32px;
             }
+            
         }
     }
     .MinimalPrice{
@@ -182,6 +187,7 @@ export const ProductMinimalContainer = styled.div `
         transition: 1s; 
         margin-right:8px;
         border-radius:6px;
+        width:fit-content;
         padding:8px;
         background-color:${(props) => props.theme.baseButton};
         div{

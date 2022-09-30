@@ -1,5 +1,38 @@
 import styled from "styled-components"
 
+export const HoverCardCart = styled.a`
+ *{
+    transition: 0.2s; 
+  }
+
+  cursor: pointer;
+  display: flex;
+  border-radius:6px;
+  justify-content:center;
+  align-items:center;
+  background:#F1E9C9; 
+  color:#C47F17; 
+  padding:8px 10.75px;
+
+  .CartDivQtd{
+      width:20px;
+      height:20px; 
+      background:#C47F17; 
+      color:white; 
+      font-weight: bold; 
+      font-size: 12px; 
+      border-radius:50%;
+      text-align: center; 
+      line-height:20px; 
+      position:absolute; 
+      top:-8px;
+      right:-8px;
+      display:inline-block; 
+  }
+
+`;
+
+
 export const DivHeaderContainer = styled.div`
     padding:32px 0px;
     text-align:justify; 
@@ -10,8 +43,6 @@ export const DivHeaderContainer = styled.div`
     justify-content: space-between;  
     min-width:800px; 
     
-    .teste *{position:relative}
-
     *{
         transition: 1s; 
         position:relative;  

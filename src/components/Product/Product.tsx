@@ -1,8 +1,8 @@
 import { Product } from "../../models/Product"
-import { ProductCardContainer,ProductMinimalContainer } from "./styles";
 import { AddCartButton } from "./AddCartButton";
 import { IconButton } from "../IconButton";
 import { Minus, Plus } from "phosphor-react";
+import { ProductMinimalContainer, ProductCardContainer } from "./styles";
 
 interface ProductProps {
     product: Product;

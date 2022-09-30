@@ -2,12 +2,11 @@ import Link from "next/link";
 import {MapPin,ShoppingCart} from "phosphor-react";
 import { City } from "../../models/City";
 import { MOCK_CITIES } from "./Mock";
-import { DivHeaderContainer } from './styles';
+import { DivHeaderContainer, HoverCardCart } from './styles';
 import { CartProduct } from "../../models/Cart";
 import { useRouter } from "next/router";
 import { Cart } from "../Cart";
-import { HoverCard } from "../HoverCard";
-import { HoverCardContent, HoverCardTrigger } from "../HoverCard/HoverCard";
+import { HoverCard, HoverCardContent, HoverCardTrigger} from "../HoverCard/HoverCard";
 
 interface HeaderProps {
     currentCart: CartProduct[];
@@ -47,33 +46,24 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                         ))}
                     </select>
                 </div>
-
-<div className="teste">
-<HoverCard openDelay={0}>
-<HoverCardTrigger>
-    ASDASDASD
-</HoverCardTrigger>
-<HoverCardContent sideOffset={5} side="bottom">The content</HoverCardContent>
-</HoverCard>
-
-</div>
-
-
-                    <div 
-                        className='button_carrinho' 
-                        onClick={ () => {return false;} }
-                    >
-                        <ShoppingCart size={ 19 } weight="fill" onClick={ () => {router.push(url_cart);} } />
+                <HoverCard>
+                    <HoverCardTrigger asChild>
+                    <HoverCardCart onClick={ () => {router.push(url_cart);} }>
+                        <ShoppingCart size={ 19 } weight="fill" />
                         { qtd_carrinho!=0?<div className='CartDivQtd'>{ qtd_carrinho }</div>:"" }
-                        {router.asPath=="/"?
-                            <Cart 
-                                    AddToCart={ AddToCart } 
-                                    currentCart={ currentCart }
-                                    isInHeader={ true }
-                                />
-                        :""
-                        }
-                    </div>
+                    </HoverCardCart>
+                    </HoverCardTrigger>
+                    <HoverCardContent sideOffset={5}>
+                    {router.asPath=="/"?
+                        <Cart 
+                                AddToCart={ AddToCart } 
+                                currentCart={ currentCart }
+                                isInHeader={ true }
+                            />
+                    :""
+                    }
+                    </HoverCardContent>
+                </HoverCard>
             </div>
         </DivHeaderContainer>
     )
