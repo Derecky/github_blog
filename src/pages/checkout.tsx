@@ -1,10 +1,8 @@
 import type { NextPage } from 'next'
 import React, { useState } from 'react'
-import { FormCard } from '../components/FormCard'
+import { Cart } from '../components/Cart'
 import { Header } from '../components/Header'
-import { PaymentCard } from '../components/PaymentCard'
 import { MOCK_ALLPRODUCTS, MOCK_CART} from '../components/Header/Mock'
-import { MainPage } from '../components/MainPage'
 import { CartProduct } from '../models/Cart'
 import { BodyContainer } from '../styles/pages/homeStyles'
 
@@ -34,12 +32,21 @@ const Home: NextPage = () => {
   //     
   return (
     <BodyContainer>
-      <div className="Container">
-        <Header currentCart = { currentCart } AddToCart = { AddToCart } />
-        <main>
-              <MainPage AddToCart={ AddToCart } />
-        </main>
-      </div>
+      <main>
+        <div className="Container">
+          <Header currentCart = { currentCart } AddToCart = { AddToCart } />
+          <div className='bodyCheckout'>
+            <div className='cartLeft'>[ Em construção ]</div>              
+            <div className="cartDiv">
+              <Cart 
+                  AddToCart = { AddToCart } 
+                  currentCart = { currentCart }
+                  isInHeader = { false }
+              />
+            </div>
+          </div>    
+        </div>
+      </main>
     </BodyContainer>
   )
 }

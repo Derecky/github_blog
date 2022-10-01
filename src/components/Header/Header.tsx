@@ -1,57 +1,89 @@
 import Link from "next/link";
-import {MapPin,ShoppingCart} from "phosphor-react";
+import {MapPin,ShoppingCart, CaretDown, CaretUp} from "phosphor-react";
 import { City } from "../../models/City";
-import { Product } from "../Product";
-import { MOCK_CART, MOCK_CITIES } from "./Mock";
-import style from './Header.module.css';
+import { MOCK_LOCATIONS } from "./Mock";
+import { DivHeaderContainer, HoverCardCart } from './styles';
+import { CartProduct } from "../../models/Cart";
+import { useRouter } from "next/router";
+import { Cart } from "../Cart";
+import { HoverCard, HoverCardContent, HoverCardTrigger} from "../RadixHoverCard";
+import { Select, SelectContent, SelectGroup, SelectIcon, SelectItem, SelectItemIndicator, SelectItemText, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger, SelectValue, SelectViewport } from "../RadixSelect";
 
+interface HeaderProps {
+    currentCart: CartProduct[];
+    AddToCart : (productId: number, addedQuantity: number, newQuantity?:number)=>void;
+}
 
-export function Header () {
-    const city_index = 2;
-    const qtd_carrinho = (MOCK_CART.reduce((partialSum,currentItem) => partialSum + currentItem.quantity, 0));
+export function Header ({currentCart, AddToCart}: HeaderProps) {
+    const mockedCurrentCity = "Maceió";
+    const qtd_carrinho = (currentCart.reduce((partialSum,currentItem) => partialSum + currentItem.quantity, 0));
     const url = "/"; 
-    const url_cart = "/"; 
+    const url_cart = "/checkout"; 
+
 
     function formatCity(city: City) {
         return `${ city.name.slice(0,20) }, ${ city.province }`;
     }
-    const city_UF = formatCity(MOCK_CITIES[city_index]);
     
-    return (
-        <div className={ style.div_header }>
-            <Link href={ url }>
-                <a className={ style.logo }></a>
-            </Link>
+    const router = useRouter();
 
-            <div className={ style.div_header_direita }>
-                <div className={ style.div_local }>
-                    <MapPin size={19.25} weight="fill" /> 
-                    <select defaultValue={ city_index }>
-                        <option value={ city_index }>
-                            { city_UF }
-                        </option>
-                        {MOCK_CITIES.map((city) => (
-                            city_index != city.id 
-                            ? <option key={ city.id }  value={ city.id }>{ formatCity(city) }</option> 
-                            : null
-                        ))}
-                    </select>
-                </div>
-                <Link href={ url_cart }>
-                    <a className={ style.button_carrinho }>
-                        <ShoppingCart size={ 19.25 } weight="fill" />
-                        <div className={ style.div_qtd_carrinho }>{ qtd_carrinho }</div>
-                            <div className={ style.div_carrinho }>
-                                {MOCK_CART.map((product) => (
-                                    <Product 
-                                        key = { product.id }  
-                                        product = { product } 
-                                    />
-                                ))}
-                            </div>
-                    </a>
-                </Link> 
+    return (
+        <DivHeaderContainer>
+            <Link href={ url }>
+                <a className='logo'></a>
+            </Link>
+            <div className='div_header_direita' >
+            <Select defaultValue={ mockedCurrentCity }>
+                <SelectTrigger><MapPin size={18} weight="fill" />
+                    <SelectValue placeholder="Escolha a cidade" />
+                </SelectTrigger>
+                <SelectContent>
+                <SelectScrollUpButton>
+                    <CaretUp size={17} />
+                </SelectScrollUpButton>
+                <SelectViewport>
+                    {MOCK_LOCATIONS.map((province) => (
+                        <>
+                            <SelectGroup>
+                                <SelectLabel>{ province.name }</SelectLabel>
+                                    { province.cities.map((city) => (
+                                        <SelectItem value={ city }>
+                                            <SelectItemText>{ city }, { province.code }</SelectItemText>
+                                        </SelectItem>
+                                    )) }
+                                </SelectGroup>
+                            <SelectSeparator />    
+                        </>
+                    )) }
+                </SelectViewport>
+                <SelectScrollDownButton>
+                    <CaretDown size={17} />
+                </SelectScrollDownButton>
+                </SelectContent>
+            </Select>
+
+
+
+
+                <HoverCard>
+                    <HoverCardTrigger asChild>
+                    <HoverCardCart onClick={ () => {router.push(url_cart);} }>
+                        <ShoppingCart size={ 19 } weight="fill" />
+                        { qtd_carrinho!=0?<div className='CartDivQtd'>{ qtd_carrinho }</div>:"" }
+                    </HoverCardCart>
+                    </HoverCardTrigger>
+                    <HoverCardContent sideOffset={5}>
+                    {router.asPath=="/"?
+                        <Cart 
+                                AddToCart={ AddToCart } 
+                                currentCart={ currentCart }
+                                isInHeader={ true }
+                            />
+                    :""
+                    }
+                    </HoverCardContent>
+                </HoverCard>
             </div>
-        </div>
+        </DivHeaderContainer>
     )
 } 
