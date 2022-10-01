@@ -4,3 +4,9 @@ export type City = {
     province: 'AL' | 'SP' | 'SC',
 }
 
+export type Province = {
+    id: number,
+    name: string,
+    code: string,
+    cities: string[],
+}
