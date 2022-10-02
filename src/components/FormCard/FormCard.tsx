@@ -2,15 +2,21 @@ import { useState } from 'react';
 import { MapPinLine } from 'phosphor-react';
 import { defaultTheme } from "../../styles/themes/theme";
 import { FormCardContainer, SpanContainer1, SpanContainer2, FormContainer, InputContainer} from './styles';
+import { ClientData } from '../../models/ClientData';
 
-export function FormCard () {
-    const [postalCode, setPostalCode] = useState<string>();
-    const [street, setStreet] = useState<string>();
-    const [houseNumber, setHouseNumber] = useState<string>();
-    const [complement, setComplement] = useState<string>();
-    const [district, setDistrict] = useState<string>();
-    const [city, setCity] = useState<string>();
-    const [stateAbbreviation, setStateAbbreviation] = useState<string>();
+interface FormCardProps {
+    currentClientData: ClientData;
+    ChangeClientData: (dataType: string, dataValue: string)=>void;
+}
+
+export function FormCard ({currentClientData, ChangeClientData}: FormCardProps) {
+    //const [postalCode, setPostalCode] = useState<string>();
+    //const [street, setStreet] = useState<string>();
+    //const [houseNumber, setHouseNumber] = useState<string>();
+    //const [complement, setComplement] = useState<string>();
+    //const [district, setDistrict] = useState<string>();
+    //const [city, setCity] = useState<string>();
+    //const [stateAbbreviation, setStateAbbreviation] = useState<string>();
 
     return(
         <FormCardContainer>
@@ -26,30 +32,30 @@ export function FormCard () {
                 <InputContainer
                 placeholder = 'CEP'
                 width = {'12.5rem'}
-                value={postalCode}
-                onChange={(e) => setPostalCode(e.target.value)}
+                value={currentClientData.postalCode}
+                onChange={(e) => {ChangeClientData('postalCode',e.target.value)}}
                 />
 
                 <InputContainer 
                 placeholder = 'Rua' 
                 width = {'35rem'}
-                value = {street}
-                onChange={(e) => setStreet(e.target.value)}
+                value = {currentClientData.street}
+                onChange={(e) => ChangeClientData('street',e.target.value)}
                 />
 
                 <InputContainer 
                 placeholder = 'Número' 
                 width = {'12.5rem'} 
-                value = {houseNumber}
-                onChange = {(e) => setHouseNumber(e.target.value)}
+                value = {currentClientData.houseNumber}
+                onChange={(e) => ChangeClientData('houseNumber',e.target.value)}
                 />
 
                 <div>
                     <InputContainer
                         placeholder = 'Complemento'
                         width = {'21.75rem'}
-                        value = {complement}
-                        onChange = {(e) => setComplement(e.target.value)}
+                        value = {currentClientData.complement}
+                        onChange={(e) => ChangeClientData('complement',e.target.value)}
                         />
                     <span className='complementLabel' >
                         Opcional
@@ -59,22 +65,22 @@ export function FormCard () {
                 <InputContainer 
                 placeholder = 'Bairro' 
                 width = {'12.5rem'} 
-                value = {district}
-                onChange = {(e) => setDistrict(e.target.value)}
+                value = {currentClientData.district}
+                onChange={(e) => ChangeClientData('district',e.target.value)}
                 />
 
                 <InputContainer 
                 placeholder = 'Cidade' 
                 width = {'17.25rem'} 
-                value = {city}
-                onChange = {(e) => setCity(e.target.value)}
+                value = {currentClientData.city}
+                onChange={(e) => ChangeClientData('city',e.target.value)}
                 />
 
                 <InputContainer 
                 placeholder = 'UF' 
                 width = {'3.75rem'}
-                value = {stateAbbreviation}
-                onChange = {(e) => setStateAbbreviation(e.target.value)}
+                value = {currentClientData.stateAbbreviation}
+                onChange={(e) => ChangeClientData('stateAbbreviation',e.target.value)}
                 />
             </FormContainer>    
         </FormCardContainer>

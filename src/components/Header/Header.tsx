@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {MapPin,ShoppingCart, CaretDown, CaretUp} from "phosphor-react";
 import { City } from "../../models/City";
-import { MOCK_LOCATIONS } from "./Mock";
+import { mockedCurrentCity, MOCK_LOCATIONS } from "./Mock";
 import { DivHeaderContainer, HoverCardCart } from './styles';
 import { CartProduct } from "../../models/Cart";
 import { useRouter } from "next/router";
@@ -15,16 +15,10 @@ interface HeaderProps {
 }
 
 export function Header ({currentCart, AddToCart}: HeaderProps) {
-    const mockedCurrentCity = "Maceió";
     const qtd_carrinho = (currentCart.reduce((partialSum,currentItem) => partialSum + currentItem.quantity, 0));
     const url = "/"; 
     const url_cart = "/checkout"; 
 
-
-    function formatCity(city: City) {
-        return `${ city.name.slice(0,20) }, ${ city.province }`;
-    }
-    
     const router = useRouter();
 
     return (
@@ -44,10 +38,10 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                 <SelectViewport>
                     {MOCK_LOCATIONS.map((province) => (
                         <>
-                            <SelectGroup>
+                            <SelectGroup key={ province.id }>
                                 <SelectLabel>{ province.name }</SelectLabel>
                                     { province.cities.map((city) => (
-                                        <SelectItem value={ city }>
+                                        <SelectItem key={ province.id+city } value={ city }>
                                             <SelectItemText>{ city }, { province.code }</SelectItemText>
                                         </SelectItem>
                                     )) }

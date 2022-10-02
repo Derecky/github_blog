@@ -15,15 +15,21 @@ export const BodyContainer = styled.div`
     .bodyCheckout{
         display:flex; 
         flex-direction:row;
+        gap:32px;
+        justify-content: space-between;
+        align-content: flex-start;
+        vertical-align: top;
         .cartLeft{
-            width:300px; 
+            width:fit-content; 
             display:flex;
+            flex-direction: column;
+            gap:12px;
         }
         .cartDiv{
             width:448px;
             border-radius:6px;
             justify-content:center;
-            align-items:center;
+            align-items:top;
             display:flex;
             div {
                 display:flex;

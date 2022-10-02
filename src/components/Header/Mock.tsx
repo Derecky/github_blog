@@ -1,14 +1,16 @@
 import { CartProduct } from "../../models/Cart"
-import { City, Province } from "../../models/City"
+import { State } from "../../models/City"
 import { Product } from "../../models/Product"
 
 
-export const MOCK_LOCATIONS: Province[] = [
+export const MOCK_LOCATIONS: State[] = [
     {id: 0, name: 'Alagoas', code:'AL',cities:['Maceió','Arapiraca','Maragogi']},
     {id: 1, name: 'São Paulo', code:'SP',cities:['São Paulo','Osasco']},
     {id: 2, name: 'Santa Catarina', code:'SC',cities:['Florianopolis','Trombudo Central']},
 ]
 
+export const mockedCurrentCity = "Maceió";
+export const mockedCurrentStateCode = "AL";
 
 export const MOCK_ALLPRODUCTS: Product[] =[
     {
@@ -142,4 +144,5 @@ export const MOCK_CART: CartProduct[] =[
 ]
 
 export const deliveryPrice: number = 3.50;
+
 

@@ -1,9 +1,12 @@
 import type { NextPage } from 'next'
 import React, { useState } from 'react'
 import { Cart } from '../components/Cart'
+import { FormCard } from '../components/FormCard'
 import { Header } from '../components/Header'
-import { MOCK_ALLPRODUCTS, MOCK_CART} from '../components/Header/Mock'
+import { mockedCurrentCity, mockedCurrentStateCode, MOCK_ALLPRODUCTS, MOCK_CART} from '../components/Header/Mock'
+import { PaymentCard } from '../components/PaymentCard'
 import { CartProduct } from '../models/Cart'
+import { ClientData } from '../models/ClientData'
 import { BodyContainer } from '../styles/pages/homeStyles'
 
 const Home: NextPage = () => {
@@ -28,15 +31,26 @@ const Home: NextPage = () => {
     }
     setCurrentCart(CartWithoutZeroedProducts);
   }
-
-  //     
+  
+  const [currentClientData, SetClientData] = useState({postalCode:'',street:'',houseNumber:'',complement:'',district:'',city:mockedCurrentCity,stateAbbreviation:mockedCurrentStateCode} as ClientData);
+  function ChangeClientData (dataType: string, dataValue: string){
+    let newClientData =  {... currentClientData };
+    newClientData[dataType as keyof ClientData] = dataValue;
+    
+    SetClientData(newClientData);
+  }
   return (
     <BodyContainer>
       <main>
         <div className="Container">
-          <Header currentCart = { currentCart } AddToCart = { AddToCart } />
+          <Header currentCart = { currentCart } AddToCart = { AddToCart }/>
           <div className='bodyCheckout'>
-            <div className='cartLeft'>[ Em construção ]</div>              
+            <div className='cartLeft'>
+              <FormCard 
+                currentClientData = { currentClientData } 
+                ChangeClientData = { ChangeClientData } />
+              <PaymentCard />
+            </div>              
             <div className="cartDiv">
               <Cart 
                   AddToCart = { AddToCart } 
