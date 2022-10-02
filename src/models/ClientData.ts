@@ -6,4 +6,5 @@ export type ClientData = {
     district: string,
     city: string,
     stateAbbreviation: string,
+    paymentType: string,//'credit'|'debit'|'money',
 }

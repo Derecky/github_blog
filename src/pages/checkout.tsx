@@ -49,7 +49,9 @@ const Home: NextPage = () => {
               <FormCard 
                 currentClientData = { currentClientData } 
                 ChangeClientData = { ChangeClientData } />
-              <PaymentCard />
+              <PaymentCard 
+                currentClientData = { currentClientData } 
+                ChangeClientData = { ChangeClientData } />
             </div>              
             <div className="cartDiv">
               <Cart 
