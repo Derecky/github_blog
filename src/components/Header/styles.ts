@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const HoverCardCart = styled.a`
  *{
-    transition: 0.2s; 
+    transition: 0.3s; 
   }
 
   cursor: pointer;
@@ -12,7 +12,7 @@ export const HoverCardCart = styled.a`
   align-items:center;
   background:${(props) => props.theme.yellowLight};
   color:${(props) => props.theme.yellowDark};
-  padding:8px 10.75px;
+  padding:8px 10.75px;  
 
   .CartDivQtd{
       width:20px;

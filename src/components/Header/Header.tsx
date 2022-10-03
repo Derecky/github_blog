@@ -27,37 +27,34 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                 <a className='logo'></a>
             </Link>
             <div className='div_header_direita' >
-            <Select defaultValue={ mockedCurrentCity }>
-                <SelectTrigger><MapPin size={18} weight="fill" />
-                    <SelectValue placeholder="Escolha a cidade" />
-                </SelectTrigger>
-                <SelectContent>
-                <SelectScrollUpButton>
-                    <CaretUp size={17} />
-                </SelectScrollUpButton>
-                <SelectViewport>
-                    {MOCK_LOCATIONS.map((province) => (
-                        <>
-                            <SelectGroup key={ province.id }>
-                                <SelectLabel>{ province.name }</SelectLabel>
-                                    { province.cities.map((city) => (
-                                        <SelectItem key={ province.id+city } value={ city }>
-                                            <SelectItemText>{ city }, { province.code }</SelectItemText>
-                                        </SelectItem>
-                                    )) }
-                                </SelectGroup>
-                            <SelectSeparator />    
-                        </>
-                    )) }
-                </SelectViewport>
-                <SelectScrollDownButton>
-                    <CaretDown size={17} />
-                </SelectScrollDownButton>
-                </SelectContent>
-            </Select>
-
-
-
+                <Select defaultValue={ mockedCurrentCity }>
+                    <SelectTrigger><MapPin size={18} weight="fill" />
+                        <SelectValue placeholder="Escolha a cidade" />
+                    </SelectTrigger>
+                    <SelectContent>
+                    <SelectScrollUpButton>
+                        <CaretUp size={17} />
+                    </SelectScrollUpButton>
+                    <SelectViewport>
+                        {MOCK_LOCATIONS.map((province) => (
+                            <>
+                                <SelectGroup key={ province.id }>
+                                    <SelectLabel>{ province.name }</SelectLabel>
+                                        { province.cities.map((city) => (
+                                            <SelectItem key={ province.id+city } value={ city }>
+                                                <SelectItemText>{ city }, { province.code }</SelectItemText>
+                                            </SelectItem>
+                                        )) }
+                                    </SelectGroup>
+                                <SelectSeparator />    
+                            </>
+                        )) }
+                    </SelectViewport>
+                    <SelectScrollDownButton>
+                        <CaretDown size={17} />
+                    </SelectScrollDownButton>
+                    </SelectContent>
+                </Select>
 
                 <HoverCard>
                     <HoverCardTrigger asChild>
@@ -67,7 +64,7 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                     </HoverCardCart>
                     </HoverCardTrigger>
                     <HoverCardContent sideOffset={5}>
-                    {router.asPath=="/"?
+                    {true?//router.asPath=="/"?
                         <Cart 
                                 AddToCart={ AddToCart } 
                                 currentCart={ currentCart }

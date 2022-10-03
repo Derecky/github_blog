@@ -150,6 +150,7 @@ export const ProductMinimalContainer = styled.div `
         display:flex;
         width:191px;
         flex-direction: column;
+        height:fit-content;
         h2{
             color:${(props) => props.theme.baseSubtTitle};
             font-size:16px;
@@ -157,50 +158,70 @@ export const ProductMinimalContainer = styled.div `
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             line-height: 130%;
+            text-align:left;
         }
         .MinimalButtons{
-            display:grid;
-            grid-template-columns: 1fr 1fr;
+            display:flex;
             height: 32px;
-            padding:8px;
+            margin:0px;
+            justify-content: left;
+            align-items: center;
+            text-align: left;
             
-            div {
-                align-items:center;
-                padding:4px 8px;
+            .MinimalMinusPlusButton{
+                text-align:left;
+                display: flex;
+                font-size: 16px;
+                transition: 1s; 
+                margin-right:8px;
+                border-radius:6px;
+                width:fit-content;
+                padding:0px 8px;
+                align-items: center;
+                justify-content: center;
                 height:100%;
-                height: 32px;
+                background-color:${(props) => props.theme.baseButton};
+
+                .quantity{
+                    align-items:center;
+                    padding:0px;
+                    margin:0px;
+                    display:flex;
+                    display:inline-block;
+                    color:${(props) => props.theme.baseTitle};
+                    font-weight:normal;
+                    border:none;
+                    background:inherit;
+                    width:40px;
+                    text-align: center;
+                    -moz-appearance: textfield;
+                    ::-webkit-outer-spin-button,::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    &:active, &:focus-visible, &:focus, &:focus-within,&:focus-visible,&:target,&:visited, &:valid{
+                        border:none;
+                        outline: 0cm;
+                    }
+                }           
+
+                svg{
+                    color:${(props) => props.theme.purple};
+                    cursor:pointer;
+                }
+                svg:hover{
+                    color:${(props) => props.theme.purpleDark};
+                }
             }
-            
+ 
         }
     }
     .MinimalPrice{
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
-        line-height: 130%;
+        height:100%;
         font-size:16px;
         color:${(props) => props.theme.baseSubtTitle};
-    }
-    .MinimalMinusPlusButton{
-        display:flex;
-        text-align:center;
-        font-size: 16px;
-        transition: 1s; 
-        margin-right:8px;
-        border-radius:6px;
-        width:fit-content;
-        padding:8px;
-        background-color:${(props) => props.theme.baseButton};
-        div{
-            display:flex;
-            color:${(props) => props.theme.baseTitle};
-            font-weight:normal;           
-        }        
-        svg{
-            color:${(props) => props.theme.purple};
-            cursor:pointer;
-        }
-        svg:hover{
-            color:${(props) => props.theme.purpleDark};
-        }
     }
 `

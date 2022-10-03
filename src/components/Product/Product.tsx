@@ -40,8 +40,7 @@ export function Product ({product, quantity=0, version, AddToCart}: ProductProps
                                     weight="fill" 
                                     onClick={()=> {AddToCart(product.id,-1);}} 
                                 />
-                                <div>{ quantity }
-                                </div>
+                                <input className='quantity' type="number" value={ quantity } onChange={(e)=>{AddToCart(product.id,0,Number(e.target.value));}} />
                                 <Plus size={11} 
                                     weight="fill" 
                                     onClick={()=> {AddToCart(product.id,+1);}}
