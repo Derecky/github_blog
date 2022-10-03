@@ -77,9 +77,17 @@ export const InputContainer = styled.input<InputContainerProps>`
     padding: 0.75rem;
     gap: 0.25rem;
     background-color: ${(props) => props.theme.baseInput};
-    border-color: ${(props) => props.theme.baseButton};
+    border: 1px solid ${(props) => props.theme.baseButton};
     color: ${(props) => props.theme.baseLabel};
     font-size: 0.875rem;
     line-height: 1.1375rem;
+
+    &:active, &:focus-visible, &:focus, &:focus-within,&:focus-visible,&:target,&:visited{
+        border:1px solid ${(props) => props.theme.yellowDark};
+        outline: 0cm;
+    }
+    &:valid{
+        color: ${(props) => props.theme.baseText};
+    }
 `
 
