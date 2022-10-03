@@ -14,27 +14,40 @@ export const BodyContainer = styled.div`
     
     .bodyCheckout{
         display:flex; 
+        margin-top:40px;
         flex-direction:row;
         gap:32px;
         justify-content: space-between;
         align-content: flex-start;
         vertical-align: top;
-        .cartLeft{
+        h2{
+            font-weight: 700;
+            font-family: 'Baloo 2', cursive;
+            color: ${(props)=>props.theme.baseSubtTitle};
+            font-size: 18px;
+            line-height: 130%;
+            align-items: center;
+        }
+        .checkoutLeft{
             width:fit-content; 
             display:flex;
             flex-direction: column;
             gap:12px;
         }
-        .cartDiv{
-            width:448px;
-            border-radius:6px;
-            justify-content:center;
-            align-items:top;
+        .checkoutRight{
+            gap:12px;
             display:flex;
-            div {
+            flex-direction: column;
+            width:448px;
+            .checkoutDiv{
+                width:100%;
+                border-radius:6px;
+                justify-content:center;
+                align-items:top;
                 display:flex;
             }
         }
+        
     }
 
     .bodySuccess{

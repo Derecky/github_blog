@@ -136,7 +136,7 @@ export const MinusPlusButtonContainer = styled.div`
 export const ProductMinimalContainer = styled.div `
     width:100%;
     background:${(props) => props.theme.baseCard};
-    padding:14px;
+    padding:32px 0px;
     border-bottom: 1px solid ${(props) => props.theme.baseButton};
     display:flex;
     align-content:space-between;
@@ -145,16 +145,17 @@ export const ProductMinimalContainer = styled.div `
     .MinimalProductImg{
         width:64px;
         height:64px;
+        margin-right: 20px;
     }
     .MinimalMain{
         display:flex;
         width:191px;
         flex-direction: column;
         height:fit-content;
-        h2{
+        h2{ 
             color:${(props) => props.theme.baseSubtTitle};
             font-size:16px;
-            margin:0px;
+            margin-bottom:8px;
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             line-height: 130%;
@@ -221,7 +222,9 @@ export const ProductMinimalContainer = styled.div `
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
         height:100%;
+        width:120px;
         font-size:16px;
         color:${(props) => props.theme.baseSubtTitle};
+        text-align: right;
     }
 `

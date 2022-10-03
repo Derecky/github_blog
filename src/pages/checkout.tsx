@@ -45,7 +45,8 @@ const Home: NextPage = () => {
         <div className="Container">
           <Header currentCart = { currentCart } AddToCart = { AddToCart }/>
           <div className='bodyCheckout'>
-            <div className='cartLeft'>
+            <div className='checkoutLeft'>
+              <h2 className="ProductGroupTitle">Complete seu pedido</h2>
               <FormCard 
                 currentClientData = { currentClientData } 
                 ChangeClientData = { ChangeClientData } />
@@ -53,12 +54,15 @@ const Home: NextPage = () => {
                 currentClientData = { currentClientData } 
                 ChangeClientData = { ChangeClientData } />
             </div>              
-            <div className="cartDiv">
-              <Cart 
-                  AddToCart = { AddToCart } 
-                  currentCart = { currentCart }
-                  isInHeader = { false }
-              />
+            <div className="checkoutRight">
+              <h2 className="ProductGroupTitle">Cafés Selecionados</h2>
+              <div className="cartDiv">
+                <Cart 
+                    AddToCart = { AddToCart } 
+                    currentCart = { currentCart }
+                    isInHeader = { false }
+                />
+              </div>
             </div>
           </div>    
         </div>

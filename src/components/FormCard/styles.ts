@@ -27,9 +27,11 @@ export const FormCardContainer = styled.div`
         width: fit-content;
         flex-direction: column;
         margin-left: 0.715rem;
+        gap:2px;
 
     span{
         width: 100%;
+        line-height: 130%;
     }}}
 
 `

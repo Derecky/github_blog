@@ -11,14 +11,13 @@ export const CartContainer = styled.div`
                 color:${(props) => props.theme.baseSubtTitle}; 
                 flex-wrap: wrap;
                 width:448px;
-                padding:40px;
+                padding:16px 40px 40px 40px;
         } 
         .CartTotal{
                 display: flex;
                 font-family: 'Roboto', sans-serif;
-                width:448px;
                 flex-wrap: wrap;
-                margin-top: 12px;
+                margin-top: 25px;
                 div{
                         width:368px;
                         text-align: right;
@@ -49,6 +48,9 @@ export const CartContainer = styled.div`
                         padding:12px;
                         font-weight: 700;
                         text-align: center;
+                        font-size: 14px;
+                        line-height: 160%;
+                        margin-top:10px;
                 }
         }
 `
