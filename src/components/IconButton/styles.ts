@@ -11,7 +11,6 @@ interface IconButtonContainerProps {
 export const IconButtonContainer = styled.div<IconButtonContainerProps> `
     background-color: ${(props) => props.background};
     color: ${(props) => props.color};
-    padding:10px;
     width:max-content;
     display:flex;
     border-radius:6px;
@@ -19,6 +18,7 @@ export const IconButtonContainer = styled.div<IconButtonContainerProps> `
     justify-content:center;
     align-items:center;
     transition: 1s; 
+    font-size: 12px;
 
     &:hover {
         cursor:pointer;
@@ -27,6 +27,9 @@ export const IconButtonContainer = styled.div<IconButtonContainerProps> `
         svg *{stroke:${(props) => props.colorIconHover};}
     }
 
-    span {display:inline-block; margin:0px 7px; }
+    span {
+        display:inline-block; 
+        margin:0px 7px; 
+    }
 `
 

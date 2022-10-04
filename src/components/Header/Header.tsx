@@ -2,29 +2,39 @@ import Link from "next/link";
 import {MapPin,ShoppingCart} from "phosphor-react";
 import { City } from "../../models/City";
 import { Product } from "../Product";
-import { MOCK_CART, MOCK_CITIES } from "./Mock";
-import style from './Header.module.css';
+import { MOCK_CITIES } from "./Mock";
+import { DivHeaderContainer } from './styles';
+import { CartProduct } from "../../models/Cart";
+import { useRouter } from "next/router";
+import { Cart } from "../Cart";
 
+interface HeaderProps {
+    currentCart: CartProduct[];
+    AddToCart : (productId: number, addedQuantity: number, newQuantity?:number)=>void;
+}
 
-export function Header () {
+export function Header ({currentCart, AddToCart}: HeaderProps) {
     const city_index = 2;
-    const qtd_carrinho = (MOCK_CART.reduce((partialSum,currentItem) => partialSum + currentItem.quantity, 0));
+    const qtd_carrinho = (currentCart.reduce((partialSum,currentItem) => partialSum + currentItem.quantity, 0));
     const url = "/"; 
-    const url_cart = "/"; 
+    const url_cart = "/checkout"; 
+    //cart={ currentCart } 
+
 
     function formatCity(city: City) {
         return `${ city.name.slice(0,20) }, ${ city.province }`;
     }
     const city_UF = formatCity(MOCK_CITIES[city_index]);
-    
+    const router = useRouter();
+
     return (
-        <div className={ style.div_header }>
+        <DivHeaderContainer>
             <Link href={ url }>
-                <a className={ style.logo }></a>
+                <a className='logo'></a>
             </Link>
 
-            <div className={ style.div_header_direita }>
-                <div className={ style.div_local }>
+            <div className='div_header_direita'>
+                <div className='div_local'>
                     <MapPin size={19.25} weight="fill" /> 
                     <select defaultValue={ city_index }>
                         <option value={ city_index }>
@@ -37,21 +47,23 @@ export function Header () {
                         ))}
                     </select>
                 </div>
-                <Link href={ url_cart }>
-                    <a className={ style.button_carrinho }>
-                        <ShoppingCart size={ 19.25 } weight="fill" />
-                        <div className={ style.div_qtd_carrinho }>{ qtd_carrinho }</div>
-                            <div className={ style.div_carrinho }>
-                                {MOCK_CART.map((product) => (
-                                    <Product 
-                                        key = { product.id }  
-                                        product = { product } 
-                                    />
-                                ))}
-                            </div>
-                    </a>
-                </Link> 
+                    <div 
+                        className='button_carrinho' 
+                        onClick={ () => {return false;} }
+                    >
+                        <ShoppingCart size={ 19.25 } weight="fill" onClick={ () => {router.push(url_cart);} } />
+                        <div className='CartDivQtd'>{ qtd_carrinho }</div>
+                        {router.asPath=="/"?
+                            <Cart 
+                                    AddToCart={ AddToCart } 
+                                    currentCart={ currentCart }
+                                    isInHeader={ true }
+                                />
+                        :""
+                        }
+                    </div>
+                    
             </div>
-        </div>
+        </DivHeaderContainer>
     )
 } 
