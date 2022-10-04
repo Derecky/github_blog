@@ -1,8 +1,14 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react"
+import { ClientData } from "../../models/ClientData";
 import { defaultTheme } from "../../styles/themes/theme"
 import { ButtonCardContainer, ButtonContainer, PaymentCardContainer, SpanContainer1, SpanContainer2 } from "./styles"
 
-export function PaymentCard() {
+interface PaymentCardProps {
+    currentClientData: ClientData
+    ChangeClientData: (dataType: string, dataValue: string)=>void;
+}
+
+export function PaymentCard({currentClientData, ChangeClientData}: PaymentCardProps) {
     return (
         <PaymentCardContainer>
             <div className='PaymentCardHeader' >
@@ -14,7 +20,7 @@ export function PaymentCard() {
             </div>
 
             <ButtonCardContainer>            
-                <ButtonContainer>
+                <ButtonContainer onClick={()=>ChangeClientData("paymentType","credit")}>
                     <CreditCard 
                     color = {defaultTheme.purple} 
                     size = {'1rem'} 
@@ -22,14 +28,14 @@ export function PaymentCard() {
                     <span>CARTÃO DE CRÉDITO</span>
                     </ButtonContainer>
 
-                <ButtonContainer>
+                <ButtonContainer onClick={()=>ChangeClientData("paymentType","debit")}>
                     <Bank 
                     color = {defaultTheme.purple} 
                     size = {'1rem'} />
                    <span>CARTÃO DE DÉBITO</span>
                     </ButtonContainer>
 
-                <ButtonContainer>
+                <ButtonContainer onClick={()=>ChangeClientData("paymentType","money")}>
                     <Money 
                     color = {defaultTheme.purple} 
                     size = {'1rem'} 

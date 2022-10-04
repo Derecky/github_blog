@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const PaymentCardContainer = styled.div`
     width: 40rem;
-    height: 12.9375rem;
     border-radius: 6px;
     padding: 2.5rem;
     gap: 2rem;
@@ -12,9 +11,7 @@ export const PaymentCardContainer = styled.div`
     align-items: left;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    font-style: regular;
-    font-weight: 25rem;
-
+    
     .PaymentCardHeader {
         display: flex;
         flex-direction: row;
@@ -24,10 +21,7 @@ export const PaymentCardContainer = styled.div`
         width: fit-content;
         flex-direction: column;
         margin-left: 0.715rem;
-
-    span{
-        width: 100%;
-    }}}
+    }}
 `
 
 export const SpanContainer1 = styled.span`
@@ -44,32 +38,28 @@ export const SpanContainer2 = styled.span`
 `
 
 export const ButtonCardContainer = styled.div`
-    display: flex;
-    width: 35rem;
-    height: 3.1875rem;
     gap: 0.75rem;
-
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 `
 
 export const ButtonContainer = styled.button`
-    width: 11.166875rem;
-    height: 3.1875;
     border-radius: 6px;
-    padding: 1rem;
-    gap: 0.75rem;
+    padding: 0.95rem 0.95rem 0.8rem 0.95rem;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    font-size: 0.75rem;
-    line-height: 1.2rem;
     color: ${(props) => props.theme.baseText};
     background-color: ${(props) => props.theme.baseButton};
-    align-items: center;
-    justify-content: left;
+    display:grid;
+    grid-template-columns: 1fr 8fr;
+    border:none;
+    text-align: left;
+    text-transform: uppercase;
 
     &:hover {
         color: ${(props) => props.theme.baseSubtTitle};
         background-color: ${(props) => props.theme.baseHover};
+        cursor:pointer;
     }
 
     &:active {
@@ -79,17 +69,10 @@ export const ButtonContainer = styled.button`
     }
 
     span{
-        display: flex;
-        block-size: fit-content;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        height: 1.1875rem;
-        width: fit-content;
-        align-items: left;
-        justify-content: left;
-     
-
-
-        border: 1px solid red;
+        margin:0rem 0rem 0rem 0.81rem;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.75rem;
+        line-height: 1.2rem;
     }
 `

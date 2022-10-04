@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const BodyContainer = styled.div`
     width:100%; 
-    background-color: #fafafa;
+    background-color: ${(props)=>props.theme.background};
 
     .Container{
         padding: 0;
@@ -14,19 +14,91 @@ export const BodyContainer = styled.div`
     
     .bodyCheckout{
         display:flex; 
+        margin-top:40px;
         flex-direction:row;
-        .cartLeft{
-            width:300px; 
-            display:flex;
+        gap:32px;
+        justify-content: space-between;
+        align-content: flex-start;
+        vertical-align: top;
+        h2{
+            font-weight: 700;
+            font-family: 'Baloo 2', cursive;
+            color: ${(props)=>props.theme.baseSubtTitle};
+            font-size: 18px;
+            line-height: 130%;
+            align-items: center;
         }
-        .cartDiv{
-            width:448px;
-            border-radius:6px;
-            justify-content:center;
-            align-items:center;
+        .checkoutLeft{
+            width:fit-content; 
             display:flex;
-            div {
+            flex-direction: column;
+            gap:12px;
+        }
+        .checkoutRight{
+            gap:12px;
+            display:flex;
+            flex-direction: column;
+            width:448px;
+            .checkoutDiv{
+                width:100%;
+                border-radius:6px;
+                justify-content:center;
+                align-items:top;
                 display:flex;
+            }
+        }
+        
+    }
+
+    .bodySuccess{
+        .h2Success{
+            font-family: 'Baloo 2', cursive;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 130%;
+            color: ${(props)=>props.theme.yellowDark};
+            margin-top:80px;
+            display: block;
+        }
+        .spanSuccess{
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 130%;
+            color: ${(props)=>props.theme.baseSubtTitle};
+            font-stretch: 100;
+        }
+        .divSuccessColumns{
+            margin-top:30px;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            .divLeftContainer{
+                border-radius:6px 36px;
+                padding:1px;
+                background:linear-gradient(to bottom right, ${(props)=>props.theme.yellow}, ${(props)=>props.theme.purple});
+                flex:1;
+                margin:12px 0px;
+                
+                .divLeft{
+                    height:100%;
+                    width:100%;
+                    background:white;
+                    border-radius:6px 36px;
+                    padding:24px 40px;
+                }
+            }
+            .divRight{
+                background:url(svg/success_page.svg) no-repeat;
+                background-position: center center;
+                flex:1;
+                min-height: 293px;
+                margin-left:102px;
+                div .IconDescription{
+                    font-size:16px;
+                }                
             }
         }
     }

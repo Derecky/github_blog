@@ -3,6 +3,7 @@ import {useState } from 'react';
 import { AddCartButtonContainer, MinusPlusButtonContainer } from "./styles";
 import { IconButton } from "../IconButton";
 import { Product } from "../../models/Product";
+import React from "react";
 
 export function AddCartButton (product: Product, AddToCart : (productId: number, addedQuantity: number)=>void) {
     const [count, setCount] = useState(1);

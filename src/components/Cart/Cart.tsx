@@ -13,8 +13,7 @@ interface CartProps {
 
 export function Cart ({currentCart, AddToCart, isInHeader}: CartProps) {
     const totalPrice = (currentCart.reduce((partialPrice,currentItem) => partialPrice + (currentItem.quantity*currentItem.product.price), 0));
-    const url_success="./";
-    const url_checkout="/checkout";
+    const url_success="/success";
     const router = useRouter();
 
     return (

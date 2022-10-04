@@ -4,7 +4,7 @@ export const ProductCardContainer = styled.div`
     display:flex;
     position:relative;
     background-color:${(props)=>props.theme.baseCard};
-    width:256px;
+    width:248px;
     margin-bottom:50px;
     border-radius:6px 36px;
     justify-content: center; 
@@ -14,8 +14,6 @@ export const ProductCardContainer = styled.div`
     *{
         height:fit-content;
         vertical-align:middle;
-        padding:0px;
-        margin:0px;
         transition: 1s; 
     }
 
@@ -25,7 +23,6 @@ export const ProductCardContainer = styled.div`
         position:absolute; 
         top:-20px;
         left:68px;
-        border:1px solid red;
         -webkit-user-select: none;
         -moz-user-select: -moz-none;
         -ms-user-select: none;
@@ -69,7 +66,8 @@ export const ProductCardContainer = styled.div`
         font-weight:normal;
         display:block;
         margin-top:8px;
-        padding:0px 20px;
+        padding:0px 15px;
+        text-align: center;
     }
 
     .PriceAndAddCartButton{
@@ -80,6 +78,8 @@ export const ProductCardContainer = styled.div`
         justify-content:space-around;
         vertical-align:middle;
         align-items:center;
+        height:38px;
+        div{height:100%;}
 
         .price{
             font-size:14px;
@@ -92,7 +92,7 @@ export const ProductCardContainer = styled.div`
                 font-family: 'Baloo 2', cursive;
                 display:inline-block;
                 padding-left:3px;
-                font-weight:bold;
+                font-weight:800;
                 vertical-align:baseline;
                 
             }
@@ -136,7 +136,7 @@ export const MinusPlusButtonContainer = styled.div`
 export const ProductMinimalContainer = styled.div `
     width:100%;
     background:${(props) => props.theme.baseCard};
-    padding:14px;
+    padding:32px 0px;
     border-bottom: 1px solid ${(props) => props.theme.baseButton};
     display:flex;
     align-content:space-between;
@@ -145,56 +145,86 @@ export const ProductMinimalContainer = styled.div `
     .MinimalProductImg{
         width:64px;
         height:64px;
+        margin-right: 20px;
     }
     .MinimalMain{
-        width:171px;
+        display:flex;
+        width:191px;
         flex-direction: column;
-        h2{
+        height:fit-content;
+        h2{ 
             color:${(props) => props.theme.baseSubtTitle};
             font-size:16px;
-            margin:0px;
+            margin-bottom:8px;
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             line-height: 130%;
+            text-align:left;
         }
         .MinimalButtons{
-            flex-direction: row;
+            display:flex;
             height: 32px;
-            justify-content:center;
-            align-items:stretch;
-            div {
-                align-items:center;
-                padding:8px;
+            margin:0px;
+            justify-content: left;
+            align-items: center;
+            text-align: left;
+            
+            .MinimalMinusPlusButton{
+                text-align:left;
+                display: flex;
+                font-size: 16px;
+                transition: 1s; 
+                margin-right:8px;
+                border-radius:6px;
+                width:fit-content;
+                padding:0px 8px;
+                align-items: center;
+                justify-content: center;
+                height:100%;
+                background-color:${(props) => props.theme.baseButton};
+
+                .quantity{
+                    align-items:center;
+                    padding:0px;
+                    margin:0px;
+                    display:flex;
+                    display:inline-block;
+                    color:${(props) => props.theme.baseTitle};
+                    font-weight:normal;
+                    border:none;
+                    background:inherit;
+                    width:40px;
+                    text-align: center;
+                    -moz-appearance: textfield;
+                    ::-webkit-outer-spin-button,::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    &:active, &:focus-visible, &:focus, &:focus-within,&:focus-visible,&:target,&:visited, &:valid{
+                        border:none;
+                        outline: 0cm;
+                    }
+                }           
+
+                svg{
+                    color:${(props) => props.theme.purple};
+                    cursor:pointer;
+                }
+                svg:hover{
+                    color:${(props) => props.theme.purpleDark};
+                }
             }
+ 
         }
     }
     .MinimalPrice{
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
-        line-height: 130%;
+        height:100%;
+        width:120px;
         font-size:16px;
         color:${(props) => props.theme.baseSubtTitle};
-    }
-    .MinimalMinusPlusButton{
-        display:flex;
-        text-align:center;
-        font-size: 16px;
-        transition: 1s; 
-        margin-right:8px;
-        border-radius:6px;
-        padding:8px;
-        background-color:${(props) => props.theme.baseButton};
-        div{
-            display:flex;
-            color:${(props) => props.theme.baseTitle};
-            font-weight:normal;           
-        }        
-        svg{
-            color:${(props) => props.theme.purple};
-            cursor:pointer;
-        }
-        svg:hover{
-            color:${(props) => props.theme.purpleDark};
-        }
+        text-align: right;
     }
 `

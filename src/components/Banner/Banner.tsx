@@ -1,4 +1,4 @@
-import { IconContext, ShoppingCart, Package,Timer,Coffee } from 'phosphor-react';
+import { IconContext} from 'phosphor-react';
 import { defaultTheme } from '../../styles/themes/theme';
 import { IconFeatures } from './IconFeatures';
 import { BannerContainer } from './styles'
@@ -13,10 +13,10 @@ export function Banner () {
                     <h1>Encontre o café perfeito para qualquer hora do dia</h1>
                     <h2>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</h2>
                     <div className='DivFeatures'>
-                        <IconContext.Provider
+                    <IconContext.Provider
                             value={{
                                 color: defaultTheme.white,
-                                size: 13,
+                                size: 15,
                                 weight: "bold",
                                 mirrored: false,
                             }}
@@ -24,22 +24,22 @@ export function Banner () {
                             <IconFeatures 
                                 icon="ShoppingCart" 
                                 color={ defaultTheme.yellowDark } 
-                                description="Compra Simples e Segura" 
+                                description={['Compra Simples e Segura', '', '', '']}
                             />
                             <IconFeatures 
                                 icon="Package" 
                                 color={ defaultTheme.baseText } 
-                                description="Embalagem mantem o café intacto" 
+                                description={['Embalagem mantem o café intacto', '', '', '']} 
                             />
                             <IconFeatures 
                                 icon="Timer" 
                                 color={ defaultTheme.yellow } 
-                                description="Entrega rápida e rastreada" 
+                                description={['Entrega rápida e rastreada', '', '', '']} 
                             />
                             <IconFeatures 
                                 icon="Coffee" 
                                 color={ defaultTheme.purple } 
-                                description="O café chega fresquinho até você" 
+                                description={['O café chega fresquinho até você', '', '', '']} 
                             />
                         </IconContext.Provider>
                     </div>
