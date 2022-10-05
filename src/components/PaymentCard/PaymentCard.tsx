@@ -2,6 +2,7 @@ import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react"
 import { ClientData } from "../../models/ClientData";
 import { defaultTheme } from "../../styles/themes/theme"
 import { ButtonCardContainer, ButtonContainer, PaymentCardContainer, SpanContainer1, SpanContainer2 } from "./styles"
+import { ButtonGroup } from "../RadixToggleGroup/RadixToggleGroup";
 
 interface PaymentCardProps {
     currentClientData: ClientData
@@ -18,32 +19,7 @@ export function PaymentCard({currentClientData, ChangeClientData}: PaymentCardPr
                     <SpanContainer2>O pagamento é feito na entrega. Escolha a forma que deseja pagar.</SpanContainer2>
                 </div>
             </div>
-
-            <ButtonCardContainer>            
-                <ButtonContainer onClick={()=>ChangeClientData("paymentType","credit")}>
-                    <CreditCard 
-                    color = {defaultTheme.purple} 
-                    size = {'1rem'} 
-                    />
-                    <span>CARTÃO DE CRÉDITO</span>
-                    </ButtonContainer>
-
-                <ButtonContainer onClick={()=>ChangeClientData("paymentType","debit")}>
-                    <Bank 
-                    color = {defaultTheme.purple} 
-                    size = {'1rem'} />
-                   <span>CARTÃO DE DÉBITO</span>
-                    </ButtonContainer>
-
-                <ButtonContainer onClick={()=>ChangeClientData("paymentType","money")}>
-                    <Money 
-                    color = {defaultTheme.purple} 
-                    size = {'1rem'} 
-                    />
-                    <span>DINHEIRO</span>
-                    </ButtonContainer>
-
-            </ButtonCardContainer>
+            <ButtonGroup Activate= {ChangeClientData} />
         </PaymentCardContainer>
     )  
 }

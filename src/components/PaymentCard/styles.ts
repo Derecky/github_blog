@@ -62,10 +62,10 @@ export const ButtonContainer = styled.button`
         cursor:pointer;
     }
 
-    &:active {
+    &:focus {
         color: ${(props) => props.theme.baseText};
         background-color: ${(props) => props.theme.purpleLight};
-        border-color: ${(props) => props.theme.purple};
+        border:1px solid ${(props) => props.theme.purple};
     }
 
     span{
