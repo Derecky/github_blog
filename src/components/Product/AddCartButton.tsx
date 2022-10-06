@@ -20,9 +20,7 @@ export function AddCartButton (product: Product, AddToCart : (productId: number,
         <AddCartButtonContainer>
             <MinusPlusButtonContainer>
                 <Minus size={11} weight="fill" onClick={ handleSub } />
-                <div>
-                    { count }
-                </div>
+                <input className='quantity' type="number" value={ count } onChange={(e)=>{setCount(Number(e.target.value));}} />
                 <Plus size={11} weight="fill" onClick={ handleAdd } />
             </MinusPlusButtonContainer>
 
