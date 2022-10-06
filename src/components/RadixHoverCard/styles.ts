@@ -8,15 +8,15 @@ export const StyledArrow = styled(HoverCardPrimitive.Arrow)`
 export const StyledContent = styled(HoverCardPrimitive.Content)`
   border-radius: 6;
   opacity:0.9;
-  transition: 0.2s;
+  transition: 500ms;
   width:fit-content;
 
   *{
-        transition: 0.2s; 
+        transition: 500ms; 
     }
   
   @media (prefers-reduced-motion: no-preference) {
-    animation-duration: 0.2s;
+    animation-duration: 500ms;
     animation-timing-function: 'cubic-bezier(0.16, 1, 0.3, 1)';
     will-change:'transform, opacity';    
   };

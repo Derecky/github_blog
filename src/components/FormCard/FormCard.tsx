@@ -1,23 +1,25 @@
-import { useState } from 'react';
 import { MapPinLine } from 'phosphor-react';
 import { defaultTheme } from "../../styles/themes/theme";
 import { FormCardContainer, SpanContainer1, SpanContainer2, FormContainer, InputContainer} from './styles';
+import { useRouter } from 'next/router';
+import { FieldValues, useForm } from "react-hook-form";
 import { ClientData } from '../../models/ClientData';
 
 interface FormCardProps {
-    currentClientData: ClientData;
-    ChangeClientData: (dataType: string, dataValue: string)=>void;
+    currentClientData: ClientData
 }
 
-export function FormCard ({currentClientData, ChangeClientData}: FormCardProps) {
-    //const [postalCode, setPostalCode] = useState<string>();
-    //const [street, setStreet] = useState<string>();
-    //const [houseNumber, setHouseNumber] = useState<string>();
-    //const [complement, setComplement] = useState<string>();
-    //const [district, setDistrict] = useState<string>();
-    //const [city, setCity] = useState<string>();
-    //const [stateAbbreviation, setStateAbbreviation] = useState<string>();
-
+export function FormCard ({currentClientData}: FormCardProps) {
+    const {register, handleSubmit} = useForm();
+    const router = useRouter();
+    function FormCardSubmit(data: FieldValues)
+        {const fetchData=fetch('/success', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({...data,paymentType:currentClientData.paymentType}),
+              });
+            fetchData.then((res)=>router.push({pathname: '/success',query: {...data,paymentType:currentClientData.paymentType}, }));}
+     
     return(
         <FormCardContainer>
             <div className='formCardHeader'>
@@ -28,34 +30,35 @@ export function FormCard ({currentClientData, ChangeClientData}: FormCardProps) 
                 </div>
             </div>
 
-            <FormContainer>
+            <FormContainer id='formClientData' method="POST" onSubmit={handleSubmit((data)=>{FormCardSubmit(data);})}>
                 <InputContainer
+                pattern="[0-9]{5}-[0-9]{3}$"
+                {...register("CEP", { required: true })} 
+                type="text"
                 placeholder = 'CEP'
                 width = {'12.5rem'}
-                value={currentClientData.postalCode}
-                onChange={(e) => {ChangeClientData('postalCode',e.target.value)}}
                 />
 
                 <InputContainer 
+                type="text"
+                {...register("street", { required: true })} 
                 placeholder = 'Rua' 
                 width = {'35rem'}
-                value = {currentClientData.street}
-                onChange={(e) => ChangeClientData('street',e.target.value)}
                 />
 
                 <InputContainer 
+                type="number"
                 placeholder = 'Número' 
+                {...register("houseNumber", { required: true })} 
                 width = {'12.5rem'} 
-                value = {currentClientData.houseNumber}
-                onChange={(e) => ChangeClientData('houseNumber',e.target.value)}
                 />
 
                 <div>
                     <InputContainer
-                        placeholder = 'Complemento'
+                        placeholder = 'complement'
+                        type="text"
+                        {...register("Complemento", { required: false })} 
                         width = {'21.75rem'}
-                        value = {currentClientData.complement}
-                        onChange={(e) => ChangeClientData('complement',e.target.value)}
                         />
                     <span className='complementLabel' >
                         Opcional
@@ -64,23 +67,24 @@ export function FormCard ({currentClientData, ChangeClientData}: FormCardProps) 
 
                 <InputContainer 
                 placeholder = 'Bairro' 
+                {...register("district", { required: true })} 
+                type="text"
                 width = {'12.5rem'} 
-                value = {currentClientData.district}
-                onChange={(e) => ChangeClientData('district',e.target.value)}
                 />
 
                 <InputContainer 
                 placeholder = 'Cidade' 
+                {...register("city", { required: true })} 
+                type="text"
                 width = {'17.25rem'} 
-                value = {currentClientData.city}
-                onChange={(e) => ChangeClientData('city',e.target.value)}
                 />
 
                 <InputContainer 
                 placeholder = 'UF' 
+                {...register("stateAbbreviation", { required: true })} 
+                pattern="[a-zA-Z]{2}$"
+                type="text"
                 width = {'3.75rem'}
-                value = {currentClientData.stateAbbreviation}
-                onChange={(e) => ChangeClientData('stateAbbreviation',e.target.value)}
                 />
             </FormContainer>    
         </FormCardContainer>

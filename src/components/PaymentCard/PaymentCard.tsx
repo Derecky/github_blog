@@ -1,7 +1,7 @@
-import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react"
+import { CurrencyDollar } from "phosphor-react"
 import { ClientData } from "../../models/ClientData";
 import { defaultTheme } from "../../styles/themes/theme"
-import { ButtonCardContainer, ButtonContainer, PaymentCardContainer, SpanContainer1, SpanContainer2 } from "./styles"
+import { PaymentCardContainer, SpanContainer1, SpanContainer2 } from "./styles"
 import { ButtonGroup } from "../RadixToggleGroup/RadixToggleGroup";
 
 interface PaymentCardProps {
@@ -9,7 +9,7 @@ interface PaymentCardProps {
     ChangeClientData: (dataType: string, dataValue: string)=>void;
 }
 
-export function PaymentCard({currentClientData, ChangeClientData}: PaymentCardProps) {
+export function PaymentCard({ChangeClientData}: PaymentCardProps) {
     return (
         <PaymentCardContainer>
             <div className='PaymentCardHeader' >

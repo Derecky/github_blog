@@ -47,9 +47,7 @@ const Home: NextPage = () => {
           <div className='bodyCheckout'>
             <div className='checkoutLeft'>
               <h2 className="ProductGroupTitle">Complete seu pedido</h2>
-              <FormCard 
-                currentClientData = { currentClientData } 
-                ChangeClientData = { ChangeClientData } />
+              <FormCard currentClientData={ currentClientData } />
               <PaymentCard 
                 currentClientData = { currentClientData } 
                 ChangeClientData = { ChangeClientData } />

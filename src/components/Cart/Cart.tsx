@@ -44,7 +44,7 @@ export function Cart ({currentCart, AddToCart, isInHeader}: CartProps) {
                     </div>
                     { (isInHeader)?
                         ""
-                        :<a onClick={ () => {router.push(url_success);} } className="CartTotalButton">CONFIRMAR PEDIDO</a>
+                        :<input type="submit" form="formClientData" className="CartTotalButton" value="CONFIRMAR PEDIDO"/> //onClick={() => {router.push(url_success);}} 
                     }
                     
                 </div>    

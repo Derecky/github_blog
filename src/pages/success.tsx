@@ -1,18 +1,26 @@
 import type { NextPage } from 'next'
 import { IconContext } from 'phosphor-react'
-import React, { useState } from 'react'
+import React from 'react'
 import { IconFeatures } from '../components/Banner/IconFeatures'
 import { Header } from '../components/Header'
-import { mockedCurrentCity, mockedCurrentStateCode } from '../components/Header/Mock'
 import { CartProduct } from '../models/Cart'
-import { ClientData } from '../models/ClientData'
 import { BodyContainer } from '../styles/pages/homeStyles'
 import { defaultTheme } from '../styles/themes/theme'
+import { useRouter } from 'next/router'
+
+interface paymentInterface {
+  credit: string,
+  debit: string,
+  money: string,
+}
 
 const Home: NextPage = () => {
-  
-  const [currentClientData] = useState({postalCode:'',street:'',houseNumber:'',complement:'',district:'',city:mockedCurrentCity,stateAbbreviation:mockedCurrentStateCode} as ClientData);
-  
+  const router=useRouter();  
+  const payment : paymentInterface ={
+    credit:"Cartão de Crédito",
+    debit:"Cartão de Débito",
+    money:"Dinheiro"};
+
   return (
     <BodyContainer>
       <main>
@@ -20,7 +28,7 @@ const Home: NextPage = () => {
           <Header currentCart = { [] as CartProduct[] } AddToCart = { () =>{return false;} } />
           <div className='bodySuccess'>
             <h2 className='h2Success'>Uhu! Pedido confirmado!</h2>
-            <span className='spanSuccess'>Agora é só aguardar que logo o café chegará até você</span>
+            <span className='spanSuccess'>Agora é só aguardar que logo o café chegará até você </span>
             <div className='divSuccessColumns'>
                 <div className='divLeftContainer'>
                     <div className='divLeft'>
@@ -37,8 +45,8 @@ const Home: NextPage = () => {
                                 color={ defaultTheme.purple } 
                                 description={[
                                     'Entrega em ', 
-                                    currentClientData.street+', '+currentClientData.houseNumber,
-                                    currentClientData.complement+' - '+currentClientData.city+','+currentClientData.stateAbbreviation,
+                                    router.query.street+', '+router.query.houseNumber,
+                                    router.query.district+(router.query.complement?', '+router.query.complement:"")+' - '+router.query.city+','+router.query.stateAbbreviation,
                                     '']}
                                 distance="21px 0px"    
                             />
@@ -55,7 +63,7 @@ const Home: NextPage = () => {
                                 color={ defaultTheme.yellowDark } 
                                 description={[
                                     'Pagamento na entrega','', 
-                                    '','xxxx modo de pagamento']}
+                                    '',payment[JSON.stringify(router.query.paymentType).replace('"', "").replace('"', "") as keyof paymentInterface]]}
                                 distance="21px 0px"    
                             />              
                         </IconContext.Provider>    

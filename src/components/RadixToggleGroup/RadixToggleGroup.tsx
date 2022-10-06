@@ -1,5 +1,3 @@
-import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
-import { TextAlignLeftIcon, TextAlignCenterIcon, TextAlignRightIcon } from '@radix-ui/react-icons';
 import { Bank, CreditCard, Money } from 'phosphor-react';
 import { defaultTheme } from '../../styles/themes/theme';
 import { StyledToggleGroup, StyledToggleGroupItem } from "./styles";
@@ -9,9 +7,18 @@ interface ButtonGroupProps {
 }
 
 export function ButtonGroup ({ Activate }:ButtonGroupProps){
+     
     return (        
-            <StyledToggleGroup type="single" defaultValue="center" aria-label="Text alignment">
-              <StyledToggleGroupItem value="left" aria-label="Left aligned" onClick={()=>Activate("paymentType","credit")}>
+            <StyledToggleGroup 
+            type="single" 
+            defaultValue="credit" 
+            aria-label="Forma de pagamento"
+            >
+              <StyledToggleGroupItem 
+              value="credit" 
+              aria-label="Cartão de Crédito" 
+              onClick={(e)=>{Activate("paymentType","credit");}} 
+              form="formClientData">
                     <CreditCard 
                     color = {defaultTheme.purple} 
                     size = {'1rem'} 
@@ -20,16 +27,21 @@ export function ButtonGroup ({ Activate }:ButtonGroupProps){
               </StyledToggleGroupItem>
 
               <StyledToggleGroupItem 
-              value="center" 
-              aria-label="Center aligned" 
-              onClick={()=>Activate("paymentType","debit")}>
+              value="debit" 
+              aria-label="Cartão de débito" 
+              onClick={()=>Activate("paymentType","debit")}
+              form="formClientData">
                     <Bank 
                     color = {defaultTheme.purple} 
                     size = {'1rem'} />
                    <span>CARTÃO DE DÉBITO</span>
               </StyledToggleGroupItem>
 
-              <StyledToggleGroupItem value="right" aria-label="Right aligned" onClick={()=>Activate("paymentType","money")}>
+              <StyledToggleGroupItem 
+              value="money" 
+              aria-label="Pagamento em dinheiro" 
+              onClick={()=>Activate("paymentType","money")}
+              form="formClientData">
                     <Money 
                     color = {defaultTheme.purple} 
                     size = {'1rem'} 
