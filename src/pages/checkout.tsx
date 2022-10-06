@@ -32,9 +32,9 @@ const Home: NextPage = () => {
     setCurrentCart(CartWithoutZeroedProducts);
   }
   
-  const [currentClientData, SetClientData] = useState({postalCode:'',street:'',houseNumber:'',complement:'',district:'',city:mockedCurrentCity,stateAbbreviation:mockedCurrentStateCode} as ClientData);
+  const [currentClientData, SetClientData] = useState({postalCode:'',street:'',houseNumber:'',complement:'',district:'',city:mockedCurrentCity,stateAbbreviation:mockedCurrentStateCode, paymentType:"credit"} as ClientData);
   function ChangeClientData (dataType: string, dataValue: string){
-    let newClientData =  {... currentClientData };
+    let newClientData =  {...currentClientData };
     newClientData[dataType as keyof ClientData] = dataValue;
     
     SetClientData(newClientData);
