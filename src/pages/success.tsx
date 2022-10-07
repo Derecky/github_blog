@@ -7,12 +7,12 @@ import { CartProduct } from '../models/Cart'
 import { BodyContainer } from '../styles/pages/homeStyles'
 import { defaultTheme } from '../styles/themes/theme'
 import { useRouter } from 'next/router'
+import { Error } from '../components/Error'
 
 interface paymentInterface {
   credit: string,
   debit: string,
-  money: string,
-  undefined: string;
+  money: string
 }
 
 const Home: NextPage = () => {
@@ -20,11 +20,24 @@ const Home: NextPage = () => {
   const payment : paymentInterface ={
     credit:"Cartão de Crédito",
     debit:"Cartão de Débito",
-    money:"Dinheiro",
-    undefined: "Falha na leitura do tipo de pagamento"
+    money:"Dinheiro"
   };
-  const paramCorrectionPayment = JSON.stringify(router.query.paymentType).replace(/[\\"]/g, '');
-  const paymentDescription= payment[paramCorrectionPayment as keyof paymentInterface];
+
+  if (JSON.stringify(router.query)=="{}"){
+    return(
+      <BodyContainer>
+      <main>
+        <div className="Container">
+          <Header currentCart = { [] as CartProduct[] } AddToCart = { () =>{return false;} } />
+          <Error />
+        </div>
+      </main>
+    </BodyContainer>
+    );
+  }
+  else {
+  const quotemarksCorrectionPayment = JSON.stringify(router.query.paymentType).replace(/[\\"]/g, '');
+  const paymentDescription= payment[quotemarksCorrectionPayment as keyof paymentInterface];
 
   return (
     <BodyContainer>
@@ -82,6 +95,7 @@ const Home: NextPage = () => {
       </main>
     </BodyContainer>
   )
+}
 }
 
 export default Home
