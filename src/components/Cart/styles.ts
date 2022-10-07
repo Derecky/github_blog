@@ -11,15 +11,16 @@ export const CartContainer = styled.div`
                 color:${(props) => props.theme.baseSubtTitle}; 
                 flex-wrap: wrap;
                 width:448px;
-                padding:40px;
-                gap: 24px;
+                padding:16px 40px 40px 40px;
         } 
         .CartTotal{
+                display: flex;
                 font-family: 'Roboto', sans-serif;
-                width:448px;
                 flex-wrap: wrap;
+                margin-top: 25px;
                 div{
-                        width:100%;
+                        width:368px;
+                        text-align: right;
                         flex-direction:row;
                         align-content: space-between;
                         justify-content: space-between;
@@ -29,8 +30,8 @@ export const CartContainer = styled.div`
                         span {
                                 color:${(props) => props.theme.baseText}; 
                                 font-size:14px;
-                                display:inline-block;
                                 text-align: left;
+                                float:left;
                         }
                 }
                 .Total,.Total span{
@@ -47,6 +48,9 @@ export const CartContainer = styled.div`
                         padding:12px;
                         font-weight: 700;
                         text-align: center;
+                        font-size: 14px;
+                        line-height: 160%;
+                        margin-top:10px;
                 }
         }
 `

@@ -1,16 +1,18 @@
 import type { NextPage } from 'next'
 import { IconContext } from 'phosphor-react'
 import React, { useState } from 'react'
-import { IconFeatures,IconFeaturesProps } from '../components/Banner/IconFeatures'
+import { IconFeatures } from '../components/Banner/IconFeatures'
 import { Header } from '../components/Header'
-import {  MOCK_CART} from '../components/Header/Mock'
+import { mockedCurrentCity, mockedCurrentStateCode } from '../components/Header/Mock'
 import { CartProduct } from '../models/Cart'
+import { ClientData } from '../models/ClientData'
 import { BodyContainer } from '../styles/pages/homeStyles'
 import { defaultTheme } from '../styles/themes/theme'
 
 const Home: NextPage = () => {
-  //const [currentCart, setCurrentCart] = useState(MOCK_CART as CartProduct[]);
- 
+  
+  const [currentClientData] = useState({postalCode:'',street:'',houseNumber:'',complement:'',district:'',city:mockedCurrentCity,stateAbbreviation:mockedCurrentStateCode} as ClientData);
+  
   return (
     <BodyContainer>
       <main>
@@ -35,8 +37,9 @@ const Home: NextPage = () => {
                                 color={ defaultTheme.purple } 
                                 description={[
                                     'Entrega em ', 
-                                    'Rua João Daniel Martinelli, 12',
-                                    'Farrapos - Porto Alegre, RS','']}
+                                    currentClientData.street+', '+currentClientData.houseNumber,
+                                    currentClientData.complement+' - '+currentClientData.city+','+currentClientData.stateAbbreviation,
+                                    '']}
                                 distance="21px 0px"    
                             />
                             <IconFeatures 
@@ -58,7 +61,8 @@ const Home: NextPage = () => {
                         </IconContext.Provider>    
                     </div>
                 </div>
-                <div className='divRight'></div>
+                <div className='divRight'>
+                </div>
             </div>
           </div>    
         </div>

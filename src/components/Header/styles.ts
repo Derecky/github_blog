@@ -1,15 +1,47 @@
 import styled from "styled-components"
 
+export const HoverCardCart = styled.a`
+ *{
+    transition: 0.3s; 
+  }
+
+  cursor: pointer;
+  display: flex;
+  border-radius:6px;
+  justify-content:center;
+  align-items:center;
+  background:${(props) => props.theme.yellowLight};
+  color:${(props) => props.theme.yellowDark};
+  padding:8px 10.75px;  
+
+  .CartDivQtd{
+      width:20px;
+      height:20px; 
+      background:${(props) => props.theme.yellowDark};
+      color:white; 
+      font-weight: bold; 
+      font-size: 12px; 
+      border-radius:50%;
+      text-align: center; 
+      line-height:20px; 
+      position:absolute; 
+      top:-8px;
+      right:-8px;
+      display:inline-block; 
+  }
+
+`;
+
+
 export const DivHeaderContainer = styled.div`
     padding:32px 0px;
     text-align:justify; 
     width:100%;
-    max-width:1120px; 
     position:relative;
     display: flex; 
     justify-content: space-between;  
     min-width:800px; 
-        
+    
     *{
         transition: 1s; 
         position:relative;  
@@ -30,6 +62,7 @@ export const DivHeaderContainer = styled.div`
         justify-content: flex-end; 
         min-width:400px;
         height: 38px;
+        gap:12px;
 
         .div_local{
             border-radius:6px;
@@ -37,14 +70,14 @@ export const DivHeaderContainer = styled.div`
             align-items:center; 
             padding:0px 0.6em; 
             font-size:14px;
-            background:#EBE5F9;
-            color:#4B2995; 
+            background:${(props) => props.theme.purpleLight};
+            color:${(props) => props.theme.purpleDark};
             font-family: 'Roboto', sans-serif; 
             margin-right:12px;
 
             select{
-                background:#EBE5F9;
-                color:#4B2995; 
+                background:${(props) => props.theme.purpleLight};
+                color:${(props) => props.theme.purpleDark};
                 font-family: 'Roboto', sans-serif; 
                 display:inline-block;
                 border:0px; 
@@ -55,8 +88,8 @@ export const DivHeaderContainer = styled.div`
             border-radius:6px;
             justify-content:center;
             align-items:center;
-            background:#F1E9C9; 
-            color:#C47F17; 
+            background:${(props) => props.theme.yellowLight};
+            color:${(props) => props.theme.yellowDark};
             padding:8px 10.75px;
             svg{
                 cursor:pointer;
@@ -65,7 +98,7 @@ export const DivHeaderContainer = styled.div`
             .CartDivQtd{
                 width:20px;
                 height:20px; 
-                background:#C47F17; 
+                background:${(props) => props.theme.yellowDark};
                 color:white; 
                 font-weight: bold; 
                 font-size: 12px; 

@@ -1,8 +1,8 @@
 import { Product } from "../../models/Product"
-import { ProductCardContainer,ProductMinimalContainer } from "./styles";
 import { AddCartButton } from "./AddCartButton";
 import { IconButton } from "../IconButton";
 import { Minus, Plus } from "phosphor-react";
+import { ProductMinimalContainer, ProductCardContainer } from "./styles";
 
 interface ProductProps {
     product: Product;
@@ -40,8 +40,7 @@ export function Product ({product, quantity=0, version, AddToCart}: ProductProps
                                     weight="fill" 
                                     onClick={()=> {AddToCart(product.id,-1);}} 
                                 />
-                                <div>{ quantity }
-                                </div>
+                                <input className='quantity' type="number" value={ quantity } onChange={(e)=>{AddToCart(product.id,0,Number(e.target.value));}} />
                                 <Plus size={11} 
                                     weight="fill" 
                                     onClick={()=> {AddToCart(product.id,+1);}}

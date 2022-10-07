@@ -3,6 +3,7 @@ import {useState } from 'react';
 import { AddCartButtonContainer, MinusPlusButtonContainer } from "./styles";
 import { IconButton } from "../IconButton";
 import { Product } from "../../models/Product";
+import React from "react";
 
 export function AddCartButton (product: Product, AddToCart : (productId: number, addedQuantity: number)=>void) {
     const [count, setCount] = useState(1);
@@ -19,9 +20,7 @@ export function AddCartButton (product: Product, AddToCart : (productId: number,
         <AddCartButtonContainer>
             <MinusPlusButtonContainer>
                 <Minus size={11} weight="fill" onClick={ handleSub } />
-                <div>
-                    { count }
-                </div>
+                <input className='quantity' type="number" value={ count } onChange={(e)=>{setCount(Number(e.target.value));}} />
                 <Plus size={11} weight="fill" onClick={ handleAdd } />
             </MinusPlusButtonContainer>
 
