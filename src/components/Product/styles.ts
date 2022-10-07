@@ -4,7 +4,7 @@ export const ProductCardContainer = styled.div`
     display:flex;
     position:relative;
     background-color:${(props)=>props.theme.baseCard};
-    width:256px;
+    width:248px;
     margin-bottom:50px;
     border-radius:6px 36px;
     justify-content: center; 
@@ -14,8 +14,6 @@ export const ProductCardContainer = styled.div`
     *{
         height:fit-content;
         vertical-align:middle;
-        padding:0px;
-        margin:0px;
         transition: 1s; 
     }
 
@@ -25,7 +23,6 @@ export const ProductCardContainer = styled.div`
         position:absolute; 
         top:-20px;
         left:68px;
-        border:1px solid red;
         -webkit-user-select: none;
         -moz-user-select: -moz-none;
         -ms-user-select: none;
@@ -69,7 +66,8 @@ export const ProductCardContainer = styled.div`
         font-weight:normal;
         display:block;
         margin-top:8px;
-        padding:0px 20px;
+        padding:0px 15px;
+        text-align: center;
     }
 
     .PriceAndAddCartButton{
@@ -80,6 +78,8 @@ export const ProductCardContainer = styled.div`
         justify-content:space-around;
         vertical-align:middle;
         align-items:center;
+        height:38px;
+        div{height:100%;}
 
         .price{
             font-size:14px;
@@ -92,7 +92,7 @@ export const ProductCardContainer = styled.div`
                 font-family: 'Baloo 2', cursive;
                 display:inline-block;
                 padding-left:3px;
-                font-weight:bold;
+                font-weight:800;
                 vertical-align:baseline;
                 
             }

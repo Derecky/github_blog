@@ -2,20 +2,42 @@ import styled from "styled-components"
 
 interface IconFeaturesProps{
     color:string;
+    distance:string;
 }
 
 export const IconFeaturesContainer = styled.div<IconFeaturesProps> `
     color: ${(props) => props.theme.baseText};
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin:${(props) => props.distance};
+    //margin:21px 0px; ou 10px 0px;
+
     .IconSpan{
         color:white;
         background-color: ${(props) => props.color};
-        border-radius:50%;
+        border-radius:50% 50%;
         height:32px;
         width:32px;
-        display:inline-block;
+        line-height: 32px;
+        min-width: 32px;
         text-align:center;
-        margin-right:10px;
-        margin-bottom:20px;
+        display: inline-block;
+        margin-right:12px;
+        position:relative;
+        vertical-align: middle;
+        svg {
+            position:absolute; 
+            top:9px;
+            left:9px;
+            display:inline;
+        }
+    }    
+    .IconDescription{
+        font-size: 16px;
+        line-height:130%;
     }    
 `
 
@@ -63,9 +85,8 @@ export const BannerContainer = styled.div `
                 color: ${(props) => props.theme.baseSubtTitle};
             }
             .DivFeatures{
-                margin-top:70px;
-                div{
-                    min-width:48%;
+                margin-top:60px;
+                div{min-width:48%;
                     max-width:52%;
                     display:inline-block;
                     line-height:32px;

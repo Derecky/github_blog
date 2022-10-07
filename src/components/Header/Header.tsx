@@ -51,8 +51,8 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                         className='button_carrinho' 
                         onClick={ () => {return false;} }
                     >
-                        <ShoppingCart size={ 19.25 } weight="fill" onClick={ () => {router.push(url_cart);} } />
-                        <div className='CartDivQtd'>{ qtd_carrinho }</div>
+                        <ShoppingCart size={ 19 } weight="fill" onClick={ () => {router.push(url_cart);} } />
+                        { qtd_carrinho!=0?<div className='CartDivQtd'>{ qtd_carrinho }</div>:"" }
                         {router.asPath=="/"?
                             <Cart 
                                     AddToCart={ AddToCart } 
