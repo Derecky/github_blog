@@ -1,13 +1,13 @@
 import Link from "next/link";
 import {MapPin,ShoppingCart, CaretDown, CaretUp} from "phosphor-react";
-import { City } from "../../models/City";
 import { mockedCurrentCity, MOCK_LOCATIONS } from "./Mock";
 import { DivHeaderContainer, HoverCardCart } from './styles';
 import { CartProduct } from "../../models/Cart";
 import { useRouter } from "next/router";
 import { Cart } from "../Cart";
 import { HoverCard, HoverCardContent, HoverCardTrigger} from "../RadixHoverCard";
-import { Select, SelectContent, SelectGroup, SelectIcon, SelectItem, SelectItemIndicator, SelectItemText, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger, SelectValue, SelectViewport } from "../RadixSelect";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectItemText, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger, SelectValue, SelectViewport } from "../RadixSelect";
+import React from "react";
 
 interface HeaderProps {
     currentCart: CartProduct[];
@@ -36,18 +36,18 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                         <CaretUp size={17} />
                     </SelectScrollUpButton>
                     <SelectViewport>
-                        {MOCK_LOCATIONS.map((province) => (
-                            <>
-                                <SelectGroup key={ province.id }>
-                                    <SelectLabel>{ province.name }</SelectLabel>
-                                        { province.cities.map((city) => (
-                                            <SelectItem key={ province.id+city } value={ city }>
-                                                <SelectItemText>{ city }, { province.code }</SelectItemText>
+                        {MOCK_LOCATIONS.map((state) => (
+                            <React.Fragment key={ "fragment"+state.id }>
+                                <SelectGroup key={ state.id }>
+                                    <SelectLabel key={ "label"+state.id }>{ state.name }</SelectLabel>
+                                        { state.cities.map((city) => (
+                                            <SelectItem key={ state.id+city } value={ city }>
+                                                <SelectItemText  key={ "text"+state.id+city }>{ city }, { state.code }</SelectItemText>
                                             </SelectItem>
                                         )) }
-                                    </SelectGroup>
-                                <SelectSeparator />    
-                            </>
+                                </SelectGroup>
+                                <SelectSeparator key={ "separator"+state.id } />    
+                            </React.Fragment>
                         )) }
                     </SelectViewport>
                     <SelectScrollDownButton>
