@@ -12,14 +12,14 @@ export function ButtonGroup ({ Activate }:ButtonGroupProps){
             <StyledToggleGroup 
             type="single" 
             value="credit" 
+            defaultValue="credit"
             aria-label="Forma de pagamento" 
             >
               <StyledToggleGroupItem 
               value="credit" 
               aria-label="Cartão de Crédito" 
               onClick={()=>{Activate("paymentType","credit");}} 
-              form="formClientData"
-              autoFocus>
+              form="formClientData">
                     <CreditCard 
                     color = {defaultTheme.purple} 
                     size = {'1rem'} 

@@ -9,25 +9,25 @@ grid-template-rows: 1fr;
 `;
 
 export const StyledToggleGroupItem = styled(ToggleGroupPrimitive.Item)`
- border-radius: 6px;
+    
+    border-radius: 6px;
+    cursor:pointer;
     padding: 0.95rem 0.95rem 0.8rem 0.95rem;
     box-sizing: border-box;
     color: ${(props) => props.theme.baseText};
-    background-color: ${(props) => props.theme.baseButton};
+    background-color: ${(props) => props['data-state' as keyof ToggleGroupPrimitive.ToggleGroupItemProps] === 'on'?props.theme.purpleLight:props.theme.baseButton};
     display:grid;
     grid-template-columns: 1fr 8fr;
-    border:none;
+    border:${(props)=>(props['data-state' as keyof ToggleGroupPrimitive.ToggleGroupItemProps] === 'on'?"1px solid "+props.theme.purple:"none")};
     text-align: left;
     text-transform: uppercase;
 
     &:hover {
         color: ${(props) => props.theme.baseSubtTitle};
         background-color: ${(props) => props.theme.baseHover};
-        cursor:pointer;
     }
 
     &:focus {
-        color: ${(props) => props.theme.baseText};
         background-color: ${(props) => props.theme.purpleLight};
         border:1px solid ${(props) => props.theme.purple};
     }
