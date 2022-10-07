@@ -12,6 +12,7 @@ interface paymentInterface {
   credit: string,
   debit: string,
   money: string,
+  undefined: string;
 }
 
 const Home: NextPage = () => {
@@ -19,7 +20,11 @@ const Home: NextPage = () => {
   const payment : paymentInterface ={
     credit:"Cartão de Crédito",
     debit:"Cartão de Débito",
-    money:"Dinheiro"};
+    money:"Dinheiro",
+    undefined: "Falha na leitura do tipo de pagamento"
+  };
+  const paramCorrectionPayment = JSON.stringify(router.query.paymentType).replace(/[\\"]/g, '');
+  const paymentDescription= payment[paramCorrectionPayment as keyof paymentInterface];
 
   return (
     <BodyContainer>
@@ -63,7 +68,7 @@ const Home: NextPage = () => {
                                 color={ defaultTheme.yellowDark } 
                                 description={[
                                     'Pagamento na entrega','', 
-                                    '',payment[JSON.stringify(router.query.paymentType).replace('"', "").replace('"', "") as keyof paymentInterface]]}
+                                    '',paymentDescription]}
                                 distance="21px 0px"    
                             />              
                         </IconContext.Provider>    

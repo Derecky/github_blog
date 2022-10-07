@@ -14,7 +14,7 @@ export function FormCard ({currentClientData}: FormCardProps) {
     const router = useRouter();
     function FormCardSubmit(data: FieldValues)
         {   
-            router.push({pathname: '/success',query: {...data,paymentType:currentClientData.paymentType}, }, '/success');
+            router.push({pathname: '/success',query: {...data,paymentType:currentClientData.paymentType}}, '/success');
         }
      
     return(
