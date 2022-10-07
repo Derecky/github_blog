@@ -1,24 +1,37 @@
+import { ToggleGroupItemProps } from '@radix-ui/react-toggle-group';
+import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
 import { Bank, CreditCard, Money } from 'phosphor-react';
 import { defaultTheme } from '../../styles/themes/theme';
 import { StyledToggleGroup, StyledToggleGroupItem } from "./styles";
 
 interface ButtonGroupProps {
-    Activate: (dataType: string, dataValue: string)=>void,
+    paymentType: string,  
+    SetPaymentType: (value: string)=>void,
 }
 
-export function ButtonGroup ({ Activate }:ButtonGroupProps){
+export function ButtonGroup ({ paymentType, SetPaymentType }:ButtonGroupProps){
      
-    return (        
+    return (
+      
             <StyledToggleGroup 
-            type="single" 
-            value="credit" 
-            defaultValue="credit"
+            type="single"
+            value={paymentType}
+            onMouseUp={(e)=>{
+                  e.currentTarget.children[0].className=e.currentTarget.children[0].className.replace(" ToggleGroupItemSelected","");
+                  e.currentTarget.children[1].className=e.currentTarget.children[1].className.replace(" ToggleGroupItemSelected","");
+                  e.currentTarget.children[2].className=e.currentTarget.children[2].className.replace(" ToggleGroupItemSelected","");
+            }}
+            onValueChange={(paymentType) => {
+            if (paymentType) SetPaymentType(paymentType); 
+            }}
             aria-label="Forma de pagamento" 
             >
               <StyledToggleGroupItem 
               value="credit" 
+              className='ToggleGroupItemSelected'
               aria-label="Cartão de Crédito" 
-              onClick={()=>{Activate("paymentType","credit");}} 
+              type="button"
+              onClick={(e)=>{e.currentTarget.className+=" ToggleGroupItemSelected"}} 
               form="formClientData">
                     <CreditCard 
                     color = {defaultTheme.purple} 
@@ -30,7 +43,8 @@ export function ButtonGroup ({ Activate }:ButtonGroupProps){
               <StyledToggleGroupItem 
               value="debit" 
               aria-label="Cartão de débito" 
-              onClick={()=>Activate("paymentType","debit")}
+              type="button"
+              onClick={(e)=>{e.currentTarget.className+=" ToggleGroupItemSelected"}} 
               form="formClientData">
                     <Bank 
                     color = {defaultTheme.purple} 
@@ -41,7 +55,8 @@ export function ButtonGroup ({ Activate }:ButtonGroupProps){
               <StyledToggleGroupItem 
               value="money" 
               aria-label="Pagamento em dinheiro" 
-              onClick={()=>Activate("paymentType","money")}
+              type="button"
+              onClick={(e)=>{e.currentTarget.className+=" ToggleGroupItemSelected"}}  
               form="formClientData">
                     <Money 
                     color = {defaultTheme.purple} 

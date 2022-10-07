@@ -5,11 +5,11 @@ import { PaymentCardContainer, SpanContainer1, SpanContainer2 } from "./styles"
 import { ButtonGroup } from "../RadixToggleGroup/RadixToggleGroup";
 
 interface PaymentCardProps {
-    currentClientData: ClientData
-    ChangeClientData: (dataType: string, dataValue: string)=>void;
+    paymentType: string,
+    SetPaymentType: (value: string)=>void,
 }
 
-export function PaymentCard({ChangeClientData}: PaymentCardProps) {
+export function PaymentCard({paymentType,SetPaymentType}: PaymentCardProps) {
     return (
         <PaymentCardContainer>
             <div className='PaymentCardHeader' >
@@ -19,7 +19,7 @@ export function PaymentCard({ChangeClientData}: PaymentCardProps) {
                     <SpanContainer2>O pagamento é feito na entrega. Escolha a forma que deseja pagar.</SpanContainer2>
                 </div>
             </div>
-            <ButtonGroup Activate= {ChangeClientData} />
+            <ButtonGroup SetPaymentType= {SetPaymentType} paymentType={paymentType} />
         </PaymentCardContainer>
     )  
 }

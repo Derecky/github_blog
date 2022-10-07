@@ -3,10 +3,9 @@ import React, { useState } from 'react'
 import { Cart } from '../components/Cart'
 import { FormCard } from '../components/FormCard'
 import { Header } from '../components/Header'
-import { mockedCurrentCity, mockedCurrentStateCode, MOCK_ALLPRODUCTS, MOCK_CART} from '../components/Header/Mock'
+import { MOCK_ALLPRODUCTS, MOCK_CART} from '../components/Header/Mock'
 import { PaymentCard } from '../components/PaymentCard'
 import { CartProduct } from '../models/Cart'
-import { ClientData } from '../models/ClientData'
 import { BodyContainer } from '../styles/pages/homeStyles'
 
 const Home: NextPage = () => {
@@ -32,13 +31,15 @@ const Home: NextPage = () => {
     setCurrentCart(CartWithoutZeroedProducts);
   }
   
-  const [currentClientData, SetClientData] = useState({postalCode:'',street:'',houseNumber:'',complement:'',district:'',city:mockedCurrentCity,stateAbbreviation:mockedCurrentStateCode, paymentType:"credit"} as ClientData);
-  function ChangeClientData (dataType: string, dataValue: string){
-    let newClientData =  {...currentClientData };
-    newClientData[dataType as keyof ClientData] = dataValue;
+  //const [currentClientData, SetClientData] = useState({postalCode:'',street:'',houseNumber:'',complement:'',district:'',city:mockedCurrentCity,stateAbbreviation:mockedCurrentStateCode, paymentType:"credit"} as ClientData);  
+  //function ChangeClientData (dataType: string, dataValue: string){
+  //  let newClientData =  {...currentClientData };
+  //  newClientData[dataType as keyof ClientData] = dataValue;
     
-    SetClientData(newClientData);
-  }
+  //  SetClientData(newClientData);
+  //}
+  const [paymentType, SetPaymentType] = useState("credit" as string); 
+
   return (
     <BodyContainer>
       <main>
@@ -47,10 +48,10 @@ const Home: NextPage = () => {
           <div className='bodyCheckout'>
             <div className='checkoutLeft'>
               <h2 className="ProductGroupTitle">Complete seu pedido</h2>
-              <FormCard currentClientData={ currentClientData } />
+              <FormCard paymentType={ paymentType } />
               <PaymentCard 
-                currentClientData = { currentClientData } 
-                ChangeClientData = { ChangeClientData } />
+                paymentType = { paymentType } 
+                SetPaymentType = { SetPaymentType } />
             </div>              
             <div className="checkoutRight">
               <h2 className="ProductGroupTitle">Cafés Selecionados</h2>

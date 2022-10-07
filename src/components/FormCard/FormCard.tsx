@@ -3,18 +3,18 @@ import { defaultTheme } from "../../styles/themes/theme";
 import { FormCardContainer, SpanContainer1, SpanContainer2, FormContainer, InputContainer} from './styles';
 import { useRouter } from 'next/router';
 import { FieldValues, useForm } from "react-hook-form";
-import { ClientData } from '../../models/ClientData';
+
 
 interface FormCardProps {
-    currentClientData: ClientData
+    paymentType: string,
 }
 
-export function FormCard ({currentClientData}: FormCardProps) {
+export function FormCard ({paymentType}: FormCardProps)  {
     const {register, handleSubmit} = useForm();
     const router = useRouter();
     function FormCardSubmit(data: FieldValues)
         {   
-            router.push({pathname: '/success',query: {...data,paymentType:currentClientData.paymentType}}, '/success');
+            router.push({pathname: '/success',query: {...data,paymentType:paymentType}}, '/success');
         }
      
     return(
