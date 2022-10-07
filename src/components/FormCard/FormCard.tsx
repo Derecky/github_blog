@@ -13,12 +13,9 @@ export function FormCard ({currentClientData}: FormCardProps) {
     const {register, handleSubmit} = useForm();
     const router = useRouter();
     function FormCardSubmit(data: FieldValues)
-        {const fetchData=fetch('/success', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({...data,paymentType:currentClientData.paymentType}),
-              });
-            fetchData.then((res)=>router.push({pathname: '/success',query: {...data,paymentType:currentClientData.paymentType}, }));}
+        {   
+            router.push({pathname: '/success',query: {...data,paymentType:currentClientData.paymentType}, }, '/success');
+        }
      
     return(
         <FormCardContainer>
