@@ -58,7 +58,10 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
 
                 <HoverCard>
                     <HoverCardTrigger asChild>
-                    <HoverCardCart onClick={ () => {router.push(url_cart);} }>
+                    <HoverCardCart 
+                    onClick={ () => {router.push(url_cart);} } 
+                    disabled={ qtd_carrinho==0 }
+                    >
                         <ShoppingCart size={ 19 } weight="fill" />
                         { qtd_carrinho!=0?<div className='CartDivQtd'>{ qtd_carrinho }</div>:"" }
                     </HoverCardCart>
