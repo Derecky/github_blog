@@ -43,52 +43,54 @@ const Home: NextPage = () => {
     <BodyContainer>
       <main>
         <div className="Container">
-          <Header currentCart = { [] as CartProduct[] } AddToCart = { () =>{return false;} } />
+          <Header 
+            currentCart = { [] as CartProduct[] } 
+            AddToCart = { () =>{return false;} } 
+          />
           <div className='bodySuccess'>
             <h2 className='h2Success'>Uhu! Pedido confirmado!</h2>
             <span className='spanSuccess'>Agora é só aguardar que logo o café chegará até você </span>
             <div className='divSuccessColumns'>
-                <div className='divLeftContainer'>
-                    <div className='divLeft'>
-                    <IconContext.Provider
-                            value={{
-                                color: defaultTheme.white,
-                                size: 15,
-                                weight: "bold",
-                                mirrored: false,
-                            }}
-                        >
-                            <IconFeatures 
-                                icon="MapPin" 
-                                color={ defaultTheme.purple } 
-                                description={[
-                                    'Entrega em ', 
-                                    router.query.street+', '+router.query.houseNumber,
-                                    router.query.district+(router.query.complement?', '+router.query.complement:"")+' - '+router.query.city+','+router.query.stateAbbreviation,
-                                    '']}
-                                distance="21px 0px"    
-                            />
-                            <IconFeatures 
-                                icon="Timer" 
-                                color={ defaultTheme.yellow } 
-                                description={[
-                                    'Previsão de entrega','', 
-                                    '','xxxx horas e yyy minutos']}
-                                distance="21px 0px"    
-                            />
-                            <IconFeatures 
-                                icon="CurrencyDollar" 
-                                color={ defaultTheme.yellowDark } 
-                                description={[
-                                    'Pagamento na entrega','', 
-                                    '',paymentDescription]}
-                                distance="21px 0px"    
-                            />              
-                        </IconContext.Provider>    
-                    </div>
+              <div className='divLeftContainer'>
+                <div className='divLeft'>
+                  <IconContext.Provider
+                      value={{
+                          color: defaultTheme.white,
+                          size: 15,
+                          weight: "bold",
+                          mirrored: false,
+                      }}
+                  >
+                    <IconFeatures 
+                      icon="MapPin" 
+                      color={ defaultTheme.purple } 
+                      description={[
+                          'Entrega em ', 
+                          router.query.street+', '+router.query.houseNumber,
+                          router.query.district+(router.query.complement?', '+router.query.complement:"")+' - '+router.query.city+','+router.query.stateAbbreviation,
+                          '']}
+                      distance="21px 0px"    
+                    />
+                    <IconFeatures 
+                      icon="Timer" 
+                      color={ defaultTheme.yellow } 
+                      description={[
+                          'Previsão de entrega','', 
+                          '','xxxx horas e yyy minutos']}
+                      distance="21px 0px"    
+                    />
+                    <IconFeatures 
+                      icon="CurrencyDollar" 
+                      color={ defaultTheme.yellowDark } 
+                      description={[
+                          'Pagamento na entrega','', 
+                          '',paymentDescription]}
+                      distance="21px 0px"    
+                    />              
+                  </IconContext.Provider>    
                 </div>
-                <div className='divRight'>
-                </div>
+              </div>
+              <div className='divRight'></div>
             </div>
           </div>    
         </div>

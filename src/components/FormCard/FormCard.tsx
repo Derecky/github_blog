@@ -14,7 +14,7 @@ export function FormCard ({paymentType}: FormCardProps)  {
     const router = useRouter();
     function FormCardSubmit(data: FieldValues)
         {   
-            router.push({pathname: '/success',query: {...data,paymentType:paymentType}}, '/success');
+            router.push({pathname: '/success',query: {...data , paymentType:paymentType}}, '/success');
         }
      
     return(
@@ -27,7 +27,11 @@ export function FormCard ({paymentType}: FormCardProps)  {
                 </div>
             </div>
 
-            <FormContainer id='formClientData' method="POST" onSubmit={handleSubmit((data)=>{FormCardSubmit(data);})}>
+            <FormContainer 
+            id='formClientData' 
+            method="POST" 
+            onSubmit={handleSubmit((data)=>{FormCardSubmit(data);})}
+            >
                 <InputContainer
                 pattern="[0-9]{5}-[0-9]{3}$"
                 {...register("CEP", { required: true })} 
