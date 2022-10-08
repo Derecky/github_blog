@@ -1,5 +1,3 @@
-import { ToggleGroupItemProps } from '@radix-ui/react-toggle-group';
-import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
 import { Bank, CreditCard, Money } from 'phosphor-react';
 import { defaultTheme } from '../../styles/themes/theme';
 import { StyledToggleGroup, StyledToggleGroupItem } from "./styles";
