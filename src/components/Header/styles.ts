@@ -1,11 +1,12 @@
 import styled from "styled-components"
 
-export const HoverCardCart = styled.a`
+export const HoverCardCart = styled.button`
  *{
-    transition: 0.3s; 
+    transition: 0.2s; 
   }
-
   cursor: pointer;
+  transition: 0.2s; 
+  border: none;
   display: flex;
   border-radius:6px;
   justify-content:center;
@@ -13,6 +14,8 @@ export const HoverCardCart = styled.a`
   background:${(props) => props.theme.yellowLight};
   color:${(props) => props.theme.yellowDark};
   padding:8px 10.75px; 
+
+  :disabled{filter: brightness(0.7);}
 
   .CartDivQtd{
       width:20px;
