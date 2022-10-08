@@ -10,7 +10,7 @@ export type CartContextType = {
 export const CartContext = React.createContext<CartContextType | null>(null);
 
 export const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [currentCart, setCurrentCart] = React.useState<CartProduct[]>(MOCK_CART);
+  const [currentCart, setCurrentCart] = React.useState<CartProduct[]>([]);
 
   const AddToCart = (productId: number, addedQuantity: number, newQuantity = -1) =>{
     let ProductIsNotInCart:boolean;    

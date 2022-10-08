@@ -64,7 +64,8 @@ export function Header ({currentCart, AddToCart}: HeaderProps) {
                     </HoverCardCart>
                     </HoverCardTrigger>
                     <HoverCardContent sideOffset={5}>
-                    {router.asPath=="/"?
+                    {((router.asPath=="/")&&
+                      (currentCart.length!=0))?
                         <Cart 
                                 AddToCart={ AddToCart } 
                                 currentCart={ currentCart }
