@@ -3,14 +3,17 @@ import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from '../styles/themes/theme'
 import { GlobalStyle } from '../styles/global'
 import { HtmlContext } from 'next/dist/shared/lib/html-context'
+import TodoProvider from '../context/main'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <TodoProvider>
+      <ThemeProvider theme={defaultTheme}>
           <Component {...pageProps} />
 
           <GlobalStyle />
-    </ThemeProvider>
+      </ThemeProvider>
+    </TodoProvider>
   )
 }
 

@@ -1,3 +1,5 @@
+import TodoProvider, { TodoContext, TodoContextType } from "../../context/main";
+import * as React from 'react';
 import { Banner } from "../Banner";
 import { MOCK_ALLPRODUCTS } from "../Header/Mock";
 import { Product } from "../Product";
@@ -9,6 +11,8 @@ interface MainPageProps {
 }
 
 export function MainPage ({AddToCart}: MainPageProps) {
+    const { saveTodo } = React.useContext(TodoContext) as TodoContextType;
+    console.log(saveTodo);
     return (
         <MainPageContainer>
             <Banner />
