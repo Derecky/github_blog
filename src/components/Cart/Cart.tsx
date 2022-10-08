@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { CartProduct } from "../../models/Cart";
 import { deliveryPrice } from "../Header/Mock";
 import { Product } from "../Product";
@@ -13,8 +12,6 @@ interface CartProps {
 
 export function Cart ({currentCart, AddToCart, isInHeader}: CartProps) {
     const totalPrice = (currentCart.reduce((partialPrice,currentItem) => partialPrice + (currentItem.quantity*currentItem.product.price), 0));
-    const url_success="/success";
-    const router = useRouter();
 
     return (
         <CartContainer>
@@ -44,7 +41,7 @@ export function Cart ({currentCart, AddToCart, isInHeader}: CartProps) {
                     </div>
                     { (isInHeader)?
                         ""
-                        :<a onClick={ () => {router.push(url_success);} } className="CartTotalButton">CONFIRMAR PEDIDO</a>
+                        :<input type="submit" form="formClientData" className="CartTotalButton" value="CONFIRMAR PEDIDO"/> 
                     }
                     
                 </div>    
