@@ -2,18 +2,16 @@ import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from '../styles/themes/theme'
 import { GlobalStyle } from '../styles/global'
-import { HtmlContext } from 'next/dist/shared/lib/html-context'
-import TodoProvider from '../context/main'
+import { CartProvider } from '../context/CartContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <TodoProvider>
+    <CartProvider>
       <ThemeProvider theme={defaultTheme}>
           <Component {...pageProps} />
-
           <GlobalStyle />
       </ThemeProvider>
-    </TodoProvider>
+    </CartProvider>
   )
 }
 

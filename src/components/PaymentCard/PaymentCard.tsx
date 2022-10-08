@@ -1,5 +1,4 @@
 import { CurrencyDollar } from "phosphor-react"
-import { ClientData } from "../../models/ClientData";
 import { defaultTheme } from "../../styles/themes/theme"
 import { PaymentCardContainer, SpanContainer1, SpanContainer2 } from "./styles"
 import { ButtonGroup } from "../RadixToggleGroup/RadixToggleGroup";
