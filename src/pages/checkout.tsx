@@ -31,13 +31,6 @@ const Home: NextPage = () => {
     setCurrentCart(CartWithoutZeroedProducts);
   }
   
-  //const [currentClientData, SetClientData] = useState({postalCode:'',street:'',houseNumber:'',complement:'',district:'',city:mockedCurrentCity,stateAbbreviation:mockedCurrentStateCode, paymentType:"credit"} as ClientData);  
-  //function ChangeClientData (dataType: string, dataValue: string){
-  //  let newClientData =  {...currentClientData };
-  //  newClientData[dataType as keyof ClientData] = dataValue;
-    
-  //  SetClientData(newClientData);
-  //}
   const [paymentType, SetPaymentType] = useState("credit" as string); 
 
   return (

@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 import React, { useState } from 'react'
-import { FormCard } from '../components/FormCard'
 import { Header } from '../components/Header'
-import { PaymentCard } from '../components/PaymentCard'
 import { MOCK_ALLPRODUCTS, MOCK_CART} from '../components/Header/Mock'
 import { MainPage } from '../components/MainPage'
 import { CartProduct } from '../models/Cart'
