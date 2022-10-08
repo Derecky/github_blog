@@ -43,14 +43,24 @@ export const CartContainer = styled.div`
                         cursor:pointer;
                         width:100%;
                         background-color:${(props) => props.theme.yellow}; 
-                        color:white;
                         border-radius:6px;
                         padding:12px;
+                        border:none;
                         font-weight: 700;
                         text-align: center;
                         font-size: 14px;
                         line-height: 160%;
                         margin-top:10px;
+                        color:white;
+                        transition-duration: 500ms;
+
+                        &:active, &:focus-visible, &:focus, &:focus-within,&:focus-visible,&:target,&:visited{
+                                border:none;
+                                outline: 0cm;
+                        }
+                        &:hover{
+                                background-color:${(props) => props.theme.yellowDark}; 
+                        }
                 }
         }
 `

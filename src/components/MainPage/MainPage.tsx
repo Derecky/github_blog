@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Banner } from "../Banner";
 import { MOCK_ALLPRODUCTS } from "../Header/Mock";
 import { Product } from "../Product";
@@ -10,7 +11,7 @@ interface MainPageProps {
 
 export function MainPage ({AddToCart}: MainPageProps) {
     return (
-        <MainPageContainer>
+        <MainPageContainer>        
             <Banner />
             <h2 className="ProductGroupTitle">Nossos cafés</h2>
             <div className="ProductGroup">
